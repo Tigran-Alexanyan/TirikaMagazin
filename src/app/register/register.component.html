@@ -1,0 +1,36 @@
+<p>register works!</p>
+<h2 align="center">Register</h2>
+<div style="display: flex; justify-content: center">
+  <div style="border: 1px solid; width: 362px;padding: 30px">
+    <form [formGroup]="registerForm" novalidate (ngSubmit)="submitRegister()">
+      <div class="form-group">
+        <input type="name" class="input"  name="name" formControlName="userName" placeholder="name"/>
+      </div>
+      <br>
+      <div class="form-group">
+        <input type="surname" class="input"  name="surname" formControlName="userSurname" placeholder="surname"/>
+      </div>
+      <br>
+      <div class="form-group">
+        <input type="email" class="input"  name="email" formControlName="userEmail" placeholder="email"/>
+      </div>
+      <br>
+      <div class="form-group">
+        <input  type="password" class="input" name="password" formControlName="userPassword" placeholder="password"/>
+      </div>
+      <br>
+      <div class="form-group">
+        <button class="btn-default" [disabled]="registerForm.invalid" >
+          Submit
+        </button><br>
+        <a routerLink="/login">? Login</a>
+      </div>
+    </form>
+  </div>
+
+</div>
+
+
+
+
+

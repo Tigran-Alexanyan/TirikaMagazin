@@ -1,0 +1,36 @@
+
+
+.input{
+  width: 300px;
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 10px;
+  outline: none;
+}
+
+input.ng-touched.ng-invalid {border:solid red 2px;}
+input.ng-touched.ng-valid {border:solid green 2px;}
+
+
+.btn-default{
+  width: 100px;
+  height: 30px;
+  background-color: lawngreen;
+  color: white;
+  outline: none;
+  margin-left: 30%;
+}
+
+.btn{
+  width: 100px;
+  height: 30px;
+  background-color: #39599F;
+  color: white;
+  outline: none;
+}
+
+a{
+  color: #747474;
+  text-decoration: none;
+  margin-left: 40%;
+}
