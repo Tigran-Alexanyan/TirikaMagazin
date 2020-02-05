@@ -1,34 +1,30 @@
-<p>login works!</p>
-<h2 align="center">Login</h2>
-<div  style="display: flex; justify-content: center">
-  <div style="border: 1px solid; width: 362px;padding: 30px">
-    <form [formGroup]="loginForm"  novalidate (ngSubmit)="submitLogin()">
-      <div class="form-group">
-        <input type="email" class="input"  name="email" formControlName="userEmail" placeholder="email"/>
-      </div>
-      <br>
-      <div class="form-group">
-        <input  type="password" class="input" name="password" formControlName="userPassword" placeholder="password"/>
-      </div>
-      <br>
-      <div class="form-group">
-        <button class="btn-default" [disabled]="loginForm.invalid">
-          Submit
-        </button><br>
-        <a routerLink="/register">? Register</a>
-      </div>
 
-    </form>
+<!--<div *ngFor="let user of users;let i=index">-->
+<!--  <p *ngIf="i<5">{{user.title}}</p>-->
+<!--</div>-->
+<!---->
+<!--<div *ngFor ="let user of users;let i=index">-->
+<!--  <img src="{{user.thumbnailUrl}}" *ngIf="i<5" alt="">-->
+<!--</div>-->
+
+<div class="container">
+  <div class="login-form col-md-4 offset-md-4">
+    <h1 class="title">login here</h1><br>
+    <form [formGroup]="loginForm"  novalidate (ngSubmit)="submitLogin()">
+          <div class="form-group">
+            <input type="email" class="input"  name="email" formControlName="userEmail" placeholder="email"/>
+          </div>
+          <br>
+          <div class="form-group">
+            <input  type="password" class="input" name="password" formControlName="userPassword" placeholder="password"/>
+          </div>
+          <br>
+          <div class="form-group">
+            <button class="btn btn-primary btn-block" [disabled]="loginForm.invalid">
+              Submit
+            </button><br>
+            <a routerLink="/register">? Register</a>
+          </div>
+        </form>
   </div>
 </div>
-
-
-
-<div *ngFor="let user of users;let i=index">
-  <p *ngIf="i<5">{{user.title}}</p>
-</div>
-
-<div *ngFor ="let user of users;let i=index">
-  <img src="{{user.thumbnailUrl}}" *ngIf="i<5" alt="">
-</div>
-

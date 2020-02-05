@@ -1,5 +1,26 @@
+
+.container{
+  margin-top: 60px;
+}
+
+.login-form{
+  margin-top: 60px;
+  box-shadow: 0 0 10px 1px grey;
+  border-radius: 5px;
+  border-bottom: 20px;
+  background: white;
+}
+.title{
+  background: #007bbf;
+  padding: 10px;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 0 10px 10px;
+
+
+}
 .input{
-  width: 300px;
+  width: 340px;
   padding: 10px;
   font-size: 20px;
   border-radius: 10px;
@@ -11,19 +32,10 @@ input.ng-touched.ng-valid {border:solid green 2px;}
 
 
 .btn-default{
-  width: 100px;
-  height: 30px;
-  background-color: lawngreen;
-  color: white;
   outline: none;
-  margin-left: 30%;
 }
 
 .btn{
-  width: 100px;
-  height: 30px;
-  background-color: #39599F;
-  color: white;
   outline: none;
 }
 

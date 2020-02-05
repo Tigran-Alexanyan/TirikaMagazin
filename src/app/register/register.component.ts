@@ -11,6 +11,7 @@ import { Router} from '@angular/router';
 })
 export class RegisterComponent implements OnInit {
 
+  public open = false;
   registerForm = new FormGroup({
     userName: new FormControl('', Validators.required),
     userSurname: new FormControl('', Validators.required),
@@ -22,6 +23,7 @@ export class RegisterComponent implements OnInit {
   submitRegister() {
       this.router.navigate(['/login']);
   }
+
   ngOnInit() {
   }
 
