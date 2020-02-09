@@ -1,8 +1,9 @@
 <!--<p>category works!</p>-->
-  <div class="row">
-    <div class="col-12 border border-secondary">1
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-      Accusantium beatae culpa cum doloremque magnam.
+  <div class="row" style="height: 350px; overflow-y: auto;overflow-x: auto">
+    <div class="col-12 border border-secondary">
+      <p *ngFor="let category of categories">
+        {{category.title}}
+      </p>
     </div>
   </div>
 
