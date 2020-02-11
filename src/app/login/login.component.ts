@@ -4,10 +4,8 @@ import { ServiceService } from '../service/service.service';
 import { Router } from '@angular/router';
 import {HttpClient} from '@angular/common/http';
 
-export class User {
-  title: string;
-  thumbnailUrl: any;
-}
+
+
 
 @Component({
   selector: 'app-login',
@@ -16,25 +14,28 @@ export class User {
 })
 export class LoginComponent implements OnInit {
   loginForm = new FormGroup({
-    userEmail: new FormControl('', Validators.required),
-    userPassword: new FormControl('', Validators.required),
+    userLogin: new FormControl('admin', Validators.required),
+    userPassword: new FormControl('admin', Validators.required),
   });
 
-  users: User;
 
-   url = 'https://jsonplaceholder.typicode.com/photos';
-  constructor(private router: Router, http: HttpClient) {
-      http.get(this.url).subscribe((data: User) => this.users = data);
-    }
+  constructor(private router: Router, private http: HttpClient) {}
 
-
+  url = 'http://localhost:8081/rest/auth';
+  body: string = JSON.stringify({ login: `${this.loginForm.get('userLogin').value}`, password: this.loginForm.get('userPassword').value});
   ngOnInit(): void {
   }
 
   submitLogin() {
-    this.router.navigate(['/option']);
+    console.log(this.loginForm.get('userLogin').value);
+    console.log(this.loginForm.get('userPassword').value);
+    console.log(this.body);
+    this.http.post(this.url, this.body).subscribe(data => {
+      console.log(data);
+    });
+    }
   }
 
-}
+
 
 

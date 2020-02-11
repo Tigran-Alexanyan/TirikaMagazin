@@ -4,7 +4,7 @@ import {HttpClient} from '@angular/common/http';
 
 
 export class Category {
-  title: string;
+  description: string;
 }
 @Component({
   selector: 'app-category',
@@ -14,10 +14,16 @@ export class Category {
 export class CategoryComponent implements OnInit {
   categories: Category;
 
-  url = 'https://jsonplaceholder.typicode.com/photos';
+  url = 'http://localhost:8081/rest/category';
   constructor(private router: Router, http: HttpClient) {
-    http.get(this.url).subscribe((data: Category) => this.categories = data);
-  }
+    http.get(this.url).subscribe((data: Category) => {
+      this.categories = data;
+      console.log(data);
+    });
+
+    // this.http.get(this.url)
+    //   .map((response: Response) => response.json());
+   }
 
 
   ngOnInit() {

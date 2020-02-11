@@ -4,7 +4,7 @@ import {HttpClient} from '@angular/common/http';
 
 
 export class Item {
-  title: string;
+  name: string;
 }
 @Component({
   selector: 'app-items-list',
@@ -15,9 +15,12 @@ export class ItemsListComponent implements OnInit {
 
   items: Item;
 
-  url = 'https://jsonplaceholder.typicode.com/photos';
+  url = 'http://localhost:8081/rest/items';
   constructor(private router: Router, http: HttpClient) {
-    http.get(this.url).subscribe((data: Item) => this.items = data);
+    http.get(this.url).subscribe((data: Item) => {
+      this.items = data;
+      console.log(data);
+    });
   }
 
 

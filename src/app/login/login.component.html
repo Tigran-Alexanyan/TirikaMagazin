@@ -12,7 +12,7 @@
     <h1 class="title">login here</h1><br>
     <form [formGroup]="loginForm"  novalidate (ngSubmit)="submitLogin()">
           <div class="form-group">
-            <input type="email" class="input"  name="email" formControlName="userEmail" placeholder="email"/>
+            <input type="text" class="input"  name="login" formControlName="userLogin" placeholder="login"/>
           </div>
           <br>
           <div class="form-group">
