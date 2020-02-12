@@ -11,15 +11,17 @@ import {OptionComponent} from './option/option.component';
 
 
 const routes: Routes = [
-  {path: 'register', component: RegisterComponent},
-  {path: 'login', component: LoginComponent},
-  {path: 'menu', component: MenuComponent},
-  {path: 'text', component: TextComponent},
-  {path: 'order', component: OrderListComponent},
-  {path: 'category', component: CategoryComponent},
-  {path: 'items', component: ItemsListComponent},
-  {path: 'option', component: OptionComponent},
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'register', component: RegisterComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'menu', component: MenuComponent },
+  { path: 'text', component: TextComponent },
+  { path: 'order', component: OrderListComponent },
+  { path: 'category', component: CategoryComponent },
+  { path: 'items', component: ItemsListComponent },
+  { path: 'option', component: OptionComponent },
   // {path: '**', component: RegisterComponent},
+
 ];
 
 @NgModule({
