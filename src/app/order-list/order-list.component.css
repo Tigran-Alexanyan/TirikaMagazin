@@ -1,17 +1,19 @@
 
 .r{
-  min-width: 920px;
+  min-width: 100%;
 
 }
 
 .table{
   height: 508px;
-  width: 900px
+  width: 80%;
 }
 
 .btn1{
   width: 100%;
   margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .col-4{
@@ -23,4 +25,10 @@
 .btn2{
   display: block;
   width: 100%;
+}
+.mainPrice{
+  padding: 0 !important;
+  margin-left: 0;
+  margin-right: -30px;
+
 }

@@ -4,7 +4,7 @@ import {HttpClient} from '@angular/common/http';
 
 
 export class Category {
-  description: string;
+  name: string;
 }
 @Component({
   selector: 'app-category',
@@ -20,9 +20,6 @@ export class CategoryComponent implements OnInit {
       this.categories = data;
       console.log(data);
     });
-
-    // this.http.get(this.url)
-    //   .map((response: Response) => response.json());
    }
 
 

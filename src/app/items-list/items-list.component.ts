@@ -4,7 +4,9 @@ import {HttpClient} from '@angular/common/http';
 
 
 export class Item {
-  name: string;
+  title: string;
+  count: string;
+  priceOut: string;
 }
 @Component({
   selector: 'app-items-list',

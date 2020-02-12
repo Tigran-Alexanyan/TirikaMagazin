@@ -1,7 +1,7 @@
 
-<div *ngFor="let user of users;let i=index">
-  <p *ngIf="i<5">{{user.title}}</p>
-</div>
+<!--<div *ngFor="let user of users;let i=index">-->
+<!--  <p *ngIf="i<5">{{user.name}}</p>-->
+<!--</div>-->
 <!--&lt;!&ndash;&ndash;&gt;-->
 <!--<div *ngFor ="let user of users;let i=index">-->
 <!--  <img src="{{user.thumbnailUrl}}" *ngIf="i<5" alt="">-->
@@ -12,11 +12,11 @@
     <h1 class="title">login here</h1><br>
     <form [formGroup]="loginForm"  novalidate (ngSubmit)="submitLogin()">
           <div class="form-group">
-            <input type="text" class="input"  name="login" formControlName="userLogin" placeholder="login"/>
+            <input type="text" class="input"  name="login"  formControlName="userLogin" placeholder="login"/>
           </div>
           <br>
           <div class="form-group">
-            <input  type="password" class="input" name="password" formControlName="userPassword" placeholder="password"/>
+            <input  type="password" class="input" name="password"  formControlName="userPassword" placeholder="password"/>
           </div>
           <br>
           <div class="form-group">
