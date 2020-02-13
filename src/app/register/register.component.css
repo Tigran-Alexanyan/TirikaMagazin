@@ -10,6 +10,17 @@
   border-bottom: 20px;
   background: white;
 }
+
+.checkBox{
+  width: 25%;
+  padding: 10px;
+  margin-top: 60px;
+  border-radius: 5px;
+  border-bottom: 20px;
+  background: white;
+}
+
+
 .title{
   background: #007bbf;
   padding: 10px;
@@ -20,7 +31,7 @@
 
 }
 .input{
-  width: 340px;
+  width: 100%;
   padding: 10px;
   font-size: 20px;
   border-radius: 10px;
@@ -30,6 +41,9 @@
 input.ng-touched.ng-invalid {border:solid red 2px;}
 input.ng-touched.ng-valid {border:solid green 2px;}
 
+.alert-danger{
+  border-radius: 10px;
+}
 
 .btn-default{
   outline: none;

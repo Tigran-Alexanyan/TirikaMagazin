@@ -1,24 +1,40 @@
 
 <div class="container-fluid">
-  <div class="container">
-    <div class="login-form col-md-4 offset-md-4">
+  <div class="container d-flex">
+    <div class="login-form col-md-4">
       <h1 class="title">register here</h1><br>
       <form [formGroup]="registerForm"  novalidate (ngSubmit)="submitRegister()">
         <div class="form-group">
           <input type="text" class="input"  name="name" formControlName="userName" placeholder="Name"/>
+          <div class="alert alert-danger"
+               *ngIf="registerForm.controls['userName'].invalid && registerForm.controls['userName'].touched">
+            Некорректный name
+          </div>
         </div>
         <br>
         <div class="form-group">
           <input type="text" class="input"  name="surname" formControlName="userSurname" placeholder="surname"/>
+          <div class="alert alert-danger"
+               *ngIf="registerForm.controls['userSurname'].invalid && registerForm.controls['userSurname'].touched">
+            Некорректный surname
+          </div>
         </div>
         <br>
 
         <div class="form-group">
-          <input type="email" class="input"  name="email" formControlName="userEmail" placeholder="email"/>
+          <input type="email" class="input"  name="login" formControlName="userLogin" placeholder="login"/>
+          <div class="alert alert-danger"
+               *ngIf="registerForm.controls['userLogin'].invalid && registerForm.controls['userLogin'].touched">
+            Некорректный login
+          </div>
         </div>
         <br>
         <div class="form-group">
           <input  type="password" class="input" name="password" formControlName="userPassword" placeholder="password"/>
+          <div class="alert alert-danger"
+               *ngIf="registerForm.controls['userPassword'].invalid && registerForm.controls['userPassword'].touched">
+            Некорректный password
+          </div>
         </div>
         <br>
         <div class="form-group">
@@ -28,10 +44,14 @@
           <a routerLink="/login">? login</a>
         </div>
       </form>
+
     </div>
+    <div class="checkBox">
+        <div *ngFor="let check of checkboxes;let i=index" style="display: flex">
+          <div><mat-checkbox (click)="getId(this.check.id)">{{check.name}}</mat-checkbox></div>
+        </div>
   </div>
-
-
+  </div>
 
 </div>
 

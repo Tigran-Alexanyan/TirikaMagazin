@@ -10,10 +10,12 @@ import { CategoryComponent } from './category/category.component';
 import { ItemsListComponent } from './items-list/items-list.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule} from '@angular/common/http';
 import { OptionComponent } from './option/option.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HeaderComponent } from './header/header.component';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ItemsListComponent,
     LoginComponent,
     RegisterComponent,
-    OptionComponent
+    OptionComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,6 +36,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    MatCheckboxModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
