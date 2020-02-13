@@ -59,6 +59,4 @@ export class LoginComponent implements OnInit {
     localStorage.getItem('token');
     // localStorage.removeItem('token');
   }
-
-
 }

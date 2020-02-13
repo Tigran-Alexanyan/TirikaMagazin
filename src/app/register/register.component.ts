@@ -24,22 +24,26 @@ export class RegisterComponent implements OnInit {
   });
 
   checkboxes: CheckBox;
+  constructor(private router: Router, http: HttpClient) {
+    this.submitRegister();
+  }
 
   url = 'https://jsonplaceholder.typicode.com/users';
-  constructor(private router: Router, http: HttpClient) {
-    http.get(this.url).subscribe((data: CheckBox) => {
-      this.checkboxes = data;
-    });
+
+  ngOnInit() {
   }
+
   getId(id: number) {
     console.log(id);
+    console.log(localStorage.getItem('token'));
   }
 
   submitRegister() {
-      this.router.navigate(['/login']);
-  }
 
-  ngOnInit() {
+    // this.http.post(this.url).subscribe((data: CheckBox) => {
+    //   this.checkboxes = data;
+    // }).subscribe();
+    this.router.navigate(['/login']);
   }
 
 }
