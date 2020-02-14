@@ -11,11 +11,12 @@ import { ItemsListComponent } from './items-list/items-list.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { HttpClientModule} from '@angular/common/http';
+import { HttpClientModule, HttpInterceptor} from '@angular/common/http';
 import { OptionComponent } from './option/option.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './header/header.component';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { ServiceService } from './service/service.service';
 
 @NgModule({
   declarations: [

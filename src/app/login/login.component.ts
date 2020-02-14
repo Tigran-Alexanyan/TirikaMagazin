@@ -45,12 +45,12 @@ export class LoginComponent implements OnInit {
     this.http.post(this.url, body, {
       headers: {
         'content-type': 'application/json;',
-        // Authorization: `Bearer ${localStorage.getItem('token')}`
+         Authorization: `Bearer ${localStorage.getItem('token')}`
       }
     }).subscribe((data: any) => {
       this.user = data.userDto;
       const token = data.token;
-      console.log(token);
+     // console.log(token);
       localStorage.setItem('token', token);
       this.router.navigate(['option']);
     });
