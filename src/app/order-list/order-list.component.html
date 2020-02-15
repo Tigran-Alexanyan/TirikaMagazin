@@ -1,10 +1,9 @@
-<!--<p>order-list works!</p>-->
 
        <div class="row border border-secondary" id="scroll1"  style="min-width: 60%;height: 485px;overflow-x: auto">
          <div class="col-12 p-3" style="height: 508px">
            <div class="table">
-             <p *ngFor="let order of orders">
-               {{order.title}}
+             <p *ngFor="let item of service.items">
+               {{item}}
              </p>
            </div>
          </div>

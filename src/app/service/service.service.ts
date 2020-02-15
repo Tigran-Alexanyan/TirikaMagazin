@@ -1,20 +1,19 @@
 import { Injectable } from '@angular/core';
-import { HttpInterceptor} from '@angular/common/http';
+import {ItemsListComponent} from '../items-list/items-list.component';
+import {OrderListComponent} from '../order-list/order-list.component';
 
 @Injectable({
   providedIn: 'root'
 })
 
 
-export class ServiceService implements HttpInterceptor {
+export class ServiceService {
+  public items: string[] = [];
+  constructor() {}
 
-  constructor() { }
-  intercept(req, next) {
-    const token = req.clone({
-      setHeaders: {
-        Authorization: 'Bearer xx.xxx'
-      }
-    });
-    return next.handle(token);
+  addItem(item) {
+    this.items.push(item);
   }
+
+
 }

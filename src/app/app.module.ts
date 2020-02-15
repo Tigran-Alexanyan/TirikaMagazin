@@ -40,7 +40,7 @@ import { ServiceService } from './service/service.service';
     MatCheckboxModule,
     FormsModule,
   ],
-  providers: [],
+  providers: [ServiceService, ItemsListComponent, OrderListComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

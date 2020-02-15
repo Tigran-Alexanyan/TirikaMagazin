@@ -34,7 +34,8 @@ export class LoginComponent implements OnInit {
   }
   submitLogin() {
     // tslint:disable-next-line:max-line-length
-    const body: string = JSON.stringify({ login: this.loginForm.get('userLogin').value, password: this.loginForm.get('userPassword').value});
+    const body: string = JSON.stringify({
+      login: this.loginForm.get('userLogin').value, password: this.loginForm.get('userPassword').value});
     // console.log(this.loginForm.get('userLogin').value);
     // console.log(this.loginForm.get('userPassword').value);
     // console.log(body);
@@ -45,7 +46,6 @@ export class LoginComponent implements OnInit {
     this.http.post(this.url, body, {
       headers: {
         'content-type': 'application/json;',
-         Authorization: `Bearer ${localStorage.getItem('token')}`
       }
     }).subscribe((data: any) => {
       this.user = data.userDto;

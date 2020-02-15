@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
+import {ServiceService} from '../service/service.service';
 
 
 export class Item {
@@ -17,14 +18,17 @@ export class ItemsListComponent implements OnInit {
 
   items: Item;
 
-  url = 'http://localhost:8081/rest/items';
-  constructor(private router: Router, http: HttpClient) {
+  url = 'https://jsonplaceholder.typicode.com/todos';
+  constructor(private router: Router, private http: HttpClient, private service: ServiceService) {
     http.get(this.url).subscribe((data: Item) => {
       this.items = data;
-      console.log(data);
+   //   console.log(data);
     });
   }
-
+  ItemName(title: string) {
+    console.log(title, 'aaaaaa');
+    this.service.addItem(title);
+  }
 
   ngOnInit() {
   }

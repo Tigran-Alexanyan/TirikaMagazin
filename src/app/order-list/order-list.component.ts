@@ -1,12 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
-
-export class Order {
-  title: string;
-  thumbnailUrl: any;
-}
-
+import {ServiceService} from '../service/service.service';
+import {ItemsListComponent} from '../items-list/items-list.component';
 
 @Component({
   selector: 'app-order-list',
@@ -15,11 +11,9 @@ export class Order {
 })
 export class OrderListComponent implements OnInit {
 
-  orders: Order;
+  public item: string;
 
-  url = 'https://jsonplaceholder.typicode.com/photos';
-  constructor(private router: Router, http: HttpClient) {
-    http.get(this.url).subscribe((data: Order) => this.orders = data);
+  constructor(private router: Router, public service: ServiceService) {
   }
 
   ngOnInit() {
