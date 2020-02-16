@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import {ItemsListComponent} from '../items-list/items-list.component';
-import {OrderListComponent} from '../order-list/order-list.component';
+import {Item, ItemsListComponent} from '../items-list/items-list.component';
+
 
 @Injectable({
   providedIn: 'root'
@@ -8,11 +8,9 @@ import {OrderListComponent} from '../order-list/order-list.component';
 
 
 export class ServiceService {
-  public items: string[] = [];
-  constructor() {}
-
-  addItem(item) {
-    this.items.push(item);
+  public id: number;
+  public title: string;
+  constructor() {
   }
 
 

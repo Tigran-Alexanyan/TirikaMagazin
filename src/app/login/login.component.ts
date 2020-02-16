@@ -1,10 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { ServiceService } from '../service/service.service';
-import { Router } from '@angular/router';
-import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
-import { Category } from '../category/category.component';
-import {RegisterComponent} from '../register/register.component';
+import {Component, OnInit} from '@angular/core';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {Router} from '@angular/router';
+import {HttpClient} from '@angular/common/http';
 
 export class User {
   name: string;
@@ -36,12 +33,6 @@ export class LoginComponent implements OnInit {
     // tslint:disable-next-line:max-line-length
     const body: string = JSON.stringify({
       login: this.loginForm.get('userLogin').value, password: this.loginForm.get('userPassword').value});
-    // console.log(this.loginForm.get('userLogin').value);
-    // console.log(this.loginForm.get('userPassword').value);
-    // console.log(body);
-    // this.http.post(this.url, JSON.stringify(this.body)).subscribe((data: User) => {
-    //   console.log(data);
-    // });
 
     this.http.post(this.url, body, {
       headers: {
@@ -52,11 +43,11 @@ export class LoginComponent implements OnInit {
       const token = data.token;
      // console.log(token);
       localStorage.setItem('token', token);
-      this.router.navigate(['option']);
     });
 
 
     localStorage.getItem('token');
     // localStorage.removeItem('token');
+   // this.router.navigate(['option']);
   }
 }

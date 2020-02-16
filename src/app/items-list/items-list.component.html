@@ -13,7 +13,7 @@
           <tbody>
           <tr *ngFor="let item of items">
             <th scope="row" class="text text-center"><a>{{item.id}}</a></th>
-            <td class="text text-center" (click)="ItemName(this.item.title)">{{item.title}}</td>
+            <td class="text text-center" (click)="ItemName(item.id, item.title)">{{item.title}}</td>
             <td class="text text-center">{{item.count}}</td>
             <td class="text text-center">{{item.priceOut}}</td>
           </tr>

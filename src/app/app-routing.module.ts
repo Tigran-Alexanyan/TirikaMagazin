@@ -20,8 +20,6 @@ const routes: Routes = [
   { path: 'category', component: CategoryComponent },
   { path: 'items', component: ItemsListComponent },
   { path: 'option', component: OptionComponent },
-  // {path: '**', component: RegisterComponent},
-
 ];
 
 @NgModule({
