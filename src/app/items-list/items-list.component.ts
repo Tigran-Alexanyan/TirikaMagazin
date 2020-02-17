@@ -7,7 +7,7 @@ import {ServiceService} from '../service/service.service';
 export class Item {
   id: number;
   title: string;
-  count: string;
+  count: number;
   priceOut: string;
 }
 @Component({

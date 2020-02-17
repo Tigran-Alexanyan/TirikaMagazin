@@ -31,6 +31,7 @@ export class CategoryComponent implements OnInit {
           Authorization: `Bearer ${localStorage.getItem('token')}`}}
           ).subscribe((data: Category) => {
       this.categories = data;
+      console.log(data);
       this.obj.push(data);
       // for (let i = 0; i < this.obj.length; i++) {
      //  this.obj.push(data[i]);
