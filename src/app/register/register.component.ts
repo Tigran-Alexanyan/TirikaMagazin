@@ -31,19 +31,22 @@ export class RegisterComponent implements OnInit {
     userPassword: new FormControl('', Validators.required),
   });
 
+
+
   checkboxes: CheckBox;
   urlRole = 'http://localhost:8081/rest/role';
 
   urlUsers = 'http://localhost:8081/rest/users';
 
   check = false;
+  public num: number[] = [];
 
   ngOnInit() {
   }
+
   getId(id: number) {
-      console.log(id);
-      // console.log(localStorage.getItem('token'));
-   // this.registerForm.body.rolesId.push(id);
+    console.log(id);
+    this.num.push(id);
   }
 
   submitRegister() {
@@ -52,25 +55,25 @@ export class RegisterComponent implements OnInit {
       surname: this.registerForm.get('userSurname').value,
       login: this.registerForm.get('userLogin').value,
       password: this.registerForm.get('userPassword').value,
-      rolesId: [],
+      rolesId: this.num,
     });
 
 
     this.http.post(this.urlUsers, body, {
       headers: {
         'content-type': 'application/json;',
-         Authorization: `Bearer ${localStorage.getItem('token')}`
+         // Authorization: `Bearer ${localStorage.getItem('token')}`
       }
     }).subscribe((data: any) => {
-      this.checkboxes = data.userDto;
-      const token = data.token;
-      console.log(token);
-      localStorage.setItem('token', token);
-      this.router.navigate(['option']);
+      // this.checkboxes = data.userDto;
+      // const token = data.token;
+      // console.log(token);
+      // localStorage.setItem('token', token);
+     // console.log(data);
     });
-
+   // this.router.navigate(['option']);
     console.log(body);
-    localStorage.getItem('token');
+   // localStorage.getItem('token');
     // localStorage.removeItem('token');
   }
 }

@@ -24,14 +24,14 @@ export class ItemsListComponent  {
     http.get(this.url, {
       headers: {
         'content-type': 'application/json',
-        Authorization: `Bearer ${localStorage.getItem('token')}`}}).subscribe((data: Item) => {
+        Authorization: `Bearer ${localStorage.getItem('token')}`}
+    }).subscribe((data: Item) => {
       this.items = data;
     });
   }
 
-  ItemName(id: number, title: string ) {
-    this.service.title = title;
-    this.service.id = id;
+  ItemName(item: Item) {
+    this.service.currentItem = item;
   }
 
 

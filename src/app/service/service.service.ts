@@ -8,10 +8,11 @@ import {Item, ItemsListComponent} from '../items-list/items-list.component';
 
 
 export class ServiceService {
-  public id: number;
-  public title: string;
-  public priceOut: string;
-  public count: number;
+  // public id: number;
+  // public title: string;
+  // public priceOut: string;
+  // public count: number;
+  public currentItem;
   constructor() {
   }
 

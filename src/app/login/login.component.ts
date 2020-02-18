@@ -14,6 +14,9 @@ export class User {
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
+  constructor(private router: Router, private http: HttpClient ) {
+      this.submitLogin();
+  }
 
 
   loginForm = new FormGroup({
@@ -22,31 +25,33 @@ export class LoginComponent implements OnInit {
   });
 
   user: User;
-  constructor(private router: Router, private http: HttpClient ) {
-    this.submitLogin();
-  }
   url =  'http://localhost:8081/rest/users/auth';
 
   ngOnInit(): void {
   }
+
   submitLogin() {
+    localStorage.removeItem('token');
     // tslint:disable-next-line:max-line-length
     const body: string = JSON.stringify({
-      login: this.loginForm.get('userLogin').value, password: this.loginForm.get('userPassword').value});
-
+      login: this.loginForm.get('userLogin').value, password: this.loginForm.get('userPassword').value });
+    // @ts-ignore
     this.http.post(this.url, body, {
       headers: {
-        'content-type': 'application/json;',
+        'content-type': 'application/json'
       }
     }).subscribe((data: any) => {
       this.user = data.userDto;
       const token = data.token;
-     // console.log(token);
+      console.log(token);
       localStorage.setItem('token', token);
     });
 
 
-    localStorage.getItem('token');
+    // localStorage.getItem('token');
+    // this.router.navigate(['option']);
+
+
     // localStorage.removeItem('token');
    // this.router.navigate(['option']);
   }

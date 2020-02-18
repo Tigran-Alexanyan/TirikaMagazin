@@ -1,12 +1,4 @@
 
-<!--<div *ngFor="let user of users;let i=index">-->
-<!--  <p *ngIf="i<5">{{user.name}}</p>-->
-<!--</div>-->
-<!--&lt;!&ndash;&ndash;&gt;-->
-<!--<div *ngFor ="let user of users;let i=index">-->
-<!--  <img src="{{user.thumbnailUrl}}" *ngIf="i<5" alt="">-->
-<!--</div>-->
-
 <div class="container">
   <div class="login-form col-md-4 offset-md-4">
     <h1 class="title">login here</h1><br>
@@ -28,7 +20,7 @@
           </div>
           <br>
           <div class="form-group">
-            <button class="btn btn-primary btn-block" [disabled]="loginForm.invalid">
+            <button class="btn btn-primary btn-block"  [disabled]="loginForm.invalid">
               Submit
             </button><br>
             <a routerLink="/register">? Register</a>

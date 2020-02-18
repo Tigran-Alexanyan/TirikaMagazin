@@ -1,14 +1,17 @@
 
+<form [formGroup]="loginForm"  novalidate (ngSubmit)="prodat()">
+  <div class="form-group">
+    <input type="text" class="input"  name="name" formControlName="phone" placeholder="Name"/></div>
+</form>
        <div class="row border border-secondary" id="scroll1"  style="min-width: 60%;height: 485px;overflow-x: auto">
-
-         <form [formGroup]="loginForm"  novalidate (ngSubmit)="prodat()">
-           <div class="form-group">
-             <input type="text" class="input"  name="name" formControlName="phone" placeholder="Name"/></div>
-         </form>
          <div class="col-12 p-3" style="height: 508px">
            <div class="table">
              <div *ngFor="let item of items">
-               <p>{{item.title}}</p>{{item.count}}
+             <tr>
+               <td class="text text-center">{{item.title}}</td>
+               <td class="text text-center">{{item.count | number}}</td>
+               <td class="text text-center">{{item.priceOut | number}}</td>
+             </tr>
              </div>
            </div>
          </div>
@@ -28,9 +31,9 @@
         <div class="col-12 border border-secondary text-center"><button class="btn2"><a>Печать</a></button></div>
       </div>
       <div class="row r">
-        <div class="col-12 border border-secondary">
+        <div class="col-12 border border-secondary" style="height: 112px">
           <div *ngFor="let item of items">
-            <h1 style="font-size: 84px" class="text-right text-danger">{{item.priceOut}}</h1>
+            <h1 style="font-size: 84px" class="text-right text-danger">{{item.priceOut * item.count  | number}}</h1>
           </div>
         </div>
       </div>

@@ -6,6 +6,7 @@ import {Item, ItemsListComponent} from '../items-list/items-list.component';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 
 
+
 @Component({
   selector: 'app-order-list',
   templateUrl: './order-list.component.html',
@@ -19,33 +20,34 @@ export class OrderListComponent implements OnInit {
 
   public items: Item[] = [];
 
-  public count = 1;
-
   loginForm = new FormGroup({
     phone: new FormControl('', Validators.required),
   });
 
-  add() {
-    if (this.service.title) {
-      const item = new Item();
-      item.id = this.service.id;
-      item.title = this.service.title;
-      item.priceOut = this.service.priceOut;
-      item.count = this.service.count;
-      console.log(item.count);
-      this.service.title = null;
-      this.items.push(item);
-      item.count = this.count++;
-      console.log(item.priceOut);
-    }
+  public obj: object[] = [];
+  private i = 0;
 
-    // this.service.count--;
+  add() {
+    if (!this.service.currentItem) {
+      return;
+    }
+    const itemExists = this.items.find(i => i.id === this.service.currentItem.id);
+
+    if (itemExists) {
+      itemExists.count += 1;
+    } else {
+      const item = new Item();
+      item.id = this.service.currentItem.id;
+      item.title = this.service.currentItem.title;
+      item.priceOut = this.service.currentItem.priceOut;
+      item.count = 1;
+      this.items.push(item);
+    }
+    console.log(this.items);
   }
 
   delete() {
-    for (let i = 0; i < this.items.length; i++) {
-      this.items.splice(i, 1);
-    }
+    this.items.filter(i => i.id !== this.service.currentItem.id );
   }
 
   clear() {
@@ -53,17 +55,20 @@ export class OrderListComponent implements OnInit {
   }
 
   change() {
-
   }
+
+
   prodat() {
+    const i = this.i + 1;
+    this.obj.push({itemId: this.service.currentItem.id});
     const body: string = JSON.stringify(
       {phoneNumber: this.loginForm.get('phone').value,
-             orderItemDtos: [{itemId: this.service.id , count: this.service.count-- }]
+        orderItemDtos: this.obj
       },
     );
+
     console.log(body);
     const url = 'http://localhost:8081/rest/orders';
-    // @ts-ignore
     this.http.post(url, body, {
       headers: {
         'content-type': 'application/json',
