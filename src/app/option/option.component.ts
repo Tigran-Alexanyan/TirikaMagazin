@@ -10,6 +10,7 @@ export class OptionComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+     localStorage.getItem('token');
   }
 
 }

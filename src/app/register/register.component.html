@@ -3,7 +3,7 @@
   <div class="container d-flex">
     <div class="login-form col-md-4">
       <h1 class="title">register here</h1><br>
-      <form [formGroup]="registerForm"  novalidate (ngSubmit)="submitRegister()">
+      <form [formGroup]="registerForm"  (ngSubmit)="submitRegister()">
         <div class="form-group">
           <input type="text" class="input"  name="name" formControlName="userName" placeholder="Name"/>
           <div class="alert alert-danger"
@@ -38,7 +38,7 @@
         </div>
         <br>
         <div class="form-group">
-          <button class="btn btn-primary btn-block" [disabled]="registerForm.invalid">
+          <button class="btn btn-primary btn-block" routerLink="/login" [disabled]="registerForm.invalid">
             Submit
           </button><br>
           <a routerLink="/login">? login</a>

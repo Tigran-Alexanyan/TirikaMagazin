@@ -13,21 +13,19 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
   styleUrls: ['./order-list.component.css']
 })
 export class OrderListComponent implements OnInit {
-
-
+  private sum = 0;
   constructor(private router: Router, public service: ServiceService, private http: HttpClient) {
   }
-
   public items: Item[] = [];
+  public priceouts: number [] = [];
 
   loginForm = new FormGroup({
     phone: new FormControl('', Validators.required),
   });
 
   public obj: object[] = [];
-  private i = 0;
 
-  add() {
+ add() {
     if (!this.service.currentItem) {
       return;
     }
@@ -42,12 +40,25 @@ export class OrderListComponent implements OnInit {
       item.priceOut = this.service.currentItem.priceOut;
       item.count = 1;
       this.items.push(item);
-    }
-    console.log(this.items);
+
+
+      // for (let i = 0; i < this.items.length; i++) {
+      //    const price =  this.items[i].priceOut;
+      //    const buy = Number(price * item.count);
+      //    console.log(buy);
+      // }
+      // console.log(this.priceouts.push(price));
+      // console.log(this.priceouts);
+      // for (let i = 0; i < this.priceouts.length; i++) {
+      //   this.sum = this.sum + this.priceouts[i];
+      //   console.log(this.sum);
+      // }
+   }
+
   }
 
   delete() {
-    this.items.filter(i => i.id !== this.service.currentItem.id );
+    this.items.splice(-1 , 1);
   }
 
   clear() {
@@ -55,11 +66,11 @@ export class OrderListComponent implements OnInit {
   }
 
   change() {
+
   }
 
 
   prodat() {
-    const i = this.i + 1;
     this.obj.push({itemId: this.service.currentItem.id});
     const body: string = JSON.stringify(
       {phoneNumber: this.loginForm.get('phone').value,
@@ -78,9 +89,10 @@ export class OrderListComponent implements OnInit {
         console.log(data);
     });
 
+    this.priceouts.push(Number('000'));
   }
 
-  ngOnInit() {
+ngOnInit() {
   }
 
 }

@@ -15,27 +15,29 @@ export class Item {
   templateUrl: './items-list.component.html',
   styleUrls: ['./items-list.component.css']
 })
-export class ItemsListComponent  {
-
-  items: Item;
-
-  url = 'http://localhost:8081/rest/items';
+export class ItemsListComponent implements OnInit {
   constructor(private router: Router, private http: HttpClient, private service: ServiceService) {
     http.get(this.url, {
       headers: {
         'content-type': 'application/json',
-        Authorization: `Bearer ${localStorage.getItem('token')}`}
+        Authorization: `Bearer ${localStorage.getItem('token')}`
+      }
     }).subscribe((data: Item) => {
       this.items = data;
     });
+  }
+
+  items: Item;
+
+  url = 'http://localhost:8081/rest/items';
+
+  ngOnInit() {
+    localStorage.getItem('token');
   }
 
   ItemName(item: Item) {
     this.service.currentItem = item;
   }
 
-
-  ngOnInit() {
-  }
 
 }

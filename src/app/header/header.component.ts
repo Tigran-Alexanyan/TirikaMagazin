@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {Category} from '../category/category.component';
-import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
+import {User} from '../_models/users';
+import {AuthenticationService} from '../service/authentication.service';
+
 
 @Component({
   selector: 'app-header',
@@ -9,25 +10,16 @@ import {Router} from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
-
-  constructor(private router: Router) {
-   // this.logOut();
+  currentUser: User;
+  constructor(private router: Router, private authenticationService: AuthenticationService) {
+  // this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
   }
 
-  ngOnInit() {
-  }
-
-  logOut() {
-    // this.http.get(this.url, {
-    //   headers: {
-    //     'content-type': 'application/json',
-    //     Authorization: `Bearer ${localStorage.removeItem('token')}`
-    //   }
-    // }).subscribe((data: Category) => {
-    //   console.log(data);
-    // });
+  logout() {
     localStorage.removeItem('token');
-    this.router.navigate(['login']);
+    this.authenticationService.logout();
+    this.router.navigate(['/login']);
+  }
+  ngOnInit(): void {
   }
 }
