@@ -2,14 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
 import {ServiceService} from '../service/service.service';
+import {Item} from '../_models/items';
 
-
-export class Item {
-  id: number;
-  title: string;
-  count: number;
-  priceOut: string;
-}
 @Component({
   selector: 'app-items-list',
   templateUrl: './items-list.component.html',

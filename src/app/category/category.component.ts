@@ -1,14 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
+import { Category} from '../_models/category';
 
-
-export class Category {
-  id: number;
-  name: string;
-  description: string;
-  parentId: number;
-}
 
 @Component({
   selector: 'app-category',

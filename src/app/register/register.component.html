@@ -3,42 +3,42 @@
   <div class="container d-flex">
     <div class="login-form col-md-4">
       <h1 class="title">register here</h1><br>
-      <form [formGroup]="registerForm"  (ngSubmit)="submitRegister()">
+      <form [formGroup]="registerForm" (click)="onSubmit()">
         <div class="form-group">
-          <input type="text" class="input"  name="name" formControlName="userName" placeholder="Name"/>
+          <input type="text" class="input"  name="name" formControlName="name" placeholder="Name"/>
           <div class="alert alert-danger"
-               *ngIf="registerForm.controls['userName'].invalid && registerForm.controls['userName'].touched">
+               *ngIf="registerForm.controls['name'].invalid && registerForm.controls['name'].touched">
             Некорректный name
           </div>
         </div>
         <br>
         <div class="form-group">
-          <input type="text" class="input"  name="surname" formControlName="userSurname" placeholder="surname"/>
+          <input type="text" class="input"  name="surname" formControlName="surname" placeholder="Surname"/>
           <div class="alert alert-danger"
-               *ngIf="registerForm.controls['userSurname'].invalid && registerForm.controls['userSurname'].touched">
+               *ngIf="registerForm.controls['surname'].invalid && registerForm.controls['surname'].touched">
             Некорректный surname
           </div>
         </div>
         <br>
 
         <div class="form-group">
-          <input type="email" class="input"  name="login" formControlName="userLogin" placeholder="login"/>
+          <input type="email" class="input"  name="login" formControlName="login" placeholder="Login"/>
           <div class="alert alert-danger"
-               *ngIf="registerForm.controls['userLogin'].invalid && registerForm.controls['userLogin'].touched">
+               *ngIf="registerForm.controls['login'].invalid && registerForm.controls['login'].touched">
             Некорректный login
           </div>
         </div>
         <br>
         <div class="form-group">
-          <input  type="password" class="input" name="password" formControlName="userPassword" placeholder="password"/>
+          <input  type="password" class="input" name="password" formControlName="password" placeholder="Password"/>
           <div class="alert alert-danger"
-               *ngIf="registerForm.controls['userPassword'].invalid && registerForm.controls['userPassword'].touched">
+               *ngIf="registerForm.controls['password'].invalid && registerForm.controls['password'].touched">
             Некорректный password
           </div>
         </div>
         <br>
         <div class="form-group">
-          <button class="btn btn-primary btn-block" routerLink="/login" [disabled]="registerForm.invalid">
+          <button type="button" [disabled]="registerForm.invalid"  class="btn btn-primary btn-block">
             Submit
           </button><br>
           <a routerLink="/login">? login</a>
@@ -47,7 +47,7 @@
 
     </div>
     <div class="checkBox">
-        <div *ngFor="let check of checkboxes;let i=index" style="display: flex">
+        <div *ngFor="let check of checkboxes" style="display: flex">
           <div><mat-checkbox (click)="getId(this.check.id)">{{check.name}}</mat-checkbox></div>
         </div>
   </div>

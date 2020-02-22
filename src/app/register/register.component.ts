@@ -1,78 +1,92 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators} from '@angular/forms';
-import { Router} from '@angular/router';
-import { HttpClient} from '@angular/common/http';
+import { Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { first } from 'rxjs/operators';
 
+import { AuthenticationService  } from '../service/authentication.service';
+import { UserService} from '../service/user.service';
+import { Role } from '../_models/role';
+import { User} from '../_models/users';
 
-export class CheckBox {
-   name: string;
-   surname: string;
-   login: string;
-   password: string;
-   id: number;
-}
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
+
 export class RegisterComponent implements OnInit {
+  registerForm: FormGroup;
+  loading = false;
+  submitted = false;
 
-  constructor(private router: Router, private http: HttpClient) {
-    this.submitRegister();
-    http.get(this.urlRole).subscribe((data: CheckBox) => {
-      this.checkboxes = data;
-      // console.log(data);
-    });
+
+  constructor(
+    private formBuilder: FormBuilder,
+    private router: Router,
+    private authenticationService: AuthenticationService,
+    private userService: UserService,
+  ) {
+    if (this.authenticationService.currentUserValue) {
+      this.router.navigate(['/']);
+    }
   }
+   checkboxes: Role[];
+   user: User;
 
-  checkboxes: CheckBox;
-  public num: number[] = [];
-
-  urlRole = 'http://localhost:8081/rest/role';
-
-  urlUsers = 'http://localhost:8081/rest/users';
-
-
-  registerForm = new FormGroup({
-    userName: new FormControl('ghg', Validators.required),
-    userSurname: new FormControl('ghg', Validators.required),
-    userLogin: new FormControl('admin', Validators.required),
-    userPassword: new FormControl('admin', Validators.required),
-  });
-
-
-  check = false;
-
-  ngOnInit() {
-  }
+  public role: number [] = [];
 
   getId(id: number) {
-   // console.log(id);
-    // this.num.push(id);
-    this.num.push(id);
+    this.role.push(id);
+    console.log(this.role);
   }
 
-  submitRegister() {
-    console.log(this.num);
-    const body: string = JSON.stringify({
-      name: this.registerForm.get('userName').value,
-      surname: this.registerForm.get('userSurname').value,
-      login: this.registerForm.get('userLogin').value,
-      password: this.registerForm.get('userPassword').value,
-      roleId: this.num,
+
+  ngOnInit() {
+    this.userService.getAllRoles().subscribe((data) => {
+       this.checkboxes = data;
+       // console.log(data);
+    });
+    this.registerForm = this.formBuilder.group({
+        name: ['', Validators.required],
+        surname: ['', Validators.required],
+        login: ['', Validators.required],
+        password: ['', Validators.required],
+      });
+
+  }
+
+  get f() { return this.registerForm.controls; }
+
+  onSubmit() {
+
+    this.submitted = true;
+    if (this.registerForm.invalid) {
+      return;
+    }
+
+    this.loading = true;
+
+    const body = JSON.stringify({
+       name : this.registerForm.get('name').value,
+       surname : this.registerForm.get('surname').value,
+       login : this.registerForm.get('login').value,
+       password : this.registerForm.get('password').value,
+       rolesId : this.role,
     });
 
-    this.http.post(this.urlUsers, body, {
-      headers: {
-        'content-type': 'application/json',
-      }
-    }).subscribe((data: any) => {
+
+    console.log(body);
+    // @ts-ignore
+    this.userService.register(body).pipe(first()).subscribe(data => {
       console.log(data);
-      console.log(body);
-    });
-  }
-  }
 
-
+        // this.alertService.success('Registration successful', true);
+      this.router.navigate(['/login']);
+        },
+        error => {
+         // this.alertService.error(error);
+          this.loading = false;
+        });
+  }
+}

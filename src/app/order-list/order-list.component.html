@@ -9,8 +9,8 @@
              <div *ngFor="let item of items">
              <tr>
                <td class="text text-center">{{item.title}}</td>
-               <td class="text text-center">{{item.count | number}}</td>
-               <td class="text text-center">{{item.priceOut | number}}</td>
+               <td class="text text-center">{{item.count}}</td>
+               <td class="text text-center">{{item.priceOut}}</td>
              </tr>
              </div>
            </div>
@@ -32,8 +32,8 @@
       </div>
       <div class="row r">
         <div class="col-12 border border-secondary" style="height: 112px">
-          <div *ngFor="let item of items">
-            <h1 style="font-size: 84px" class="text-right text-danger">{{item.priceOut * item.count}}</h1>
+          <div>
+            <h1 style="font-size: 84px" class="text-right text-danger">{{sum}}</h1>
           </div>
         </div>
       </div>
