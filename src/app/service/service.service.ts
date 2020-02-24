@@ -9,6 +9,7 @@ import { Injectable } from '@angular/core';
 
 export class ServiceService {
   public currentItem;
+  public currentCat;
   constructor() {
   }
 

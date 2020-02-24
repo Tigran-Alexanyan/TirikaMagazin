@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
 import {ServiceService} from '../service/service.service';
@@ -12,22 +12,24 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
   styleUrls: ['./order-list.component.css']
 })
 export class OrderListComponent implements OnInit {
-  private removeElement: Item;
 
   constructor(private router: Router, public service: ServiceService, private http: HttpClient) {
   }
+  private removeElement: Item;
 
   public items: Item[] = [];
+
 
   loginForm = new FormGroup({
     phone: new FormControl('', Validators.required),
   });
 
   public obj: object[] = [];
-  public sum;
+  public sum = 0;
+
+  selectedItem: Item;
 
   add() {
-
     if (!this.service.currentItem) {
       return;
     }
@@ -35,6 +37,7 @@ export class OrderListComponent implements OnInit {
 
     if (itemExists) {
       itemExists.count += 1;
+      this.countDecrement(itemExists);
     } else {
       const item = new Item();
       item.id = this.service.currentItem.id;
@@ -57,10 +60,16 @@ export class OrderListComponent implements OnInit {
 
   removeItem(item: Item) {
     this.removeElement = item;
+    this.selectedItem = item;
   }
 
-  countIncrement(item: Item) {
-    item.count += 1;
+  countDecrement(item: Item) {
+     if (item.count > 0) {
+      item.count -= 1;
+     }
+  }
+   countIncrement(item: Item) {
+      item.count += 1;
   }
 
   delete() {
@@ -69,7 +78,6 @@ export class OrderListComponent implements OnInit {
       this.items.splice(indexOf, 1);
       this.sum1();
     }
-
   }
 
   clear() {
@@ -80,7 +88,6 @@ export class OrderListComponent implements OnInit {
   change() {
 
   }
-
 
   prodat() {
     this.obj.push({itemId: this.service.currentItem.id});

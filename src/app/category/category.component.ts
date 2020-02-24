@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
 import { Category} from '../_models/category';
+import {Item} from "../_models/items";
+import {ServiceService} from "../service/service.service";
 
 
 @Component({
@@ -14,7 +16,7 @@ export class CategoryComponent implements OnInit {
 
   url = 'http://localhost:8081/rest/category';
 
-  constructor(private router: Router, private http: HttpClient) {
+  constructor(private router: Router, private service: ServiceService, private http: HttpClient) {
     http.get(this.url, {
         headers: {
           'content-type': 'application/json',
@@ -22,11 +24,17 @@ export class CategoryComponent implements OnInit {
           }
     }).subscribe((data: Category) => {
       this.categories = data;
-      console.log(data);
     });
 
   }
 
+  selectedCategory = Category;
+
+  catName(category: Category) {
+    this.service.currentCat = category;
+    // @ts-ignore
+    this.selectedCategory = category;
+  }
   ngOnInit() {
   }
 

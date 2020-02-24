@@ -18,20 +18,35 @@ export class ItemsListComponent implements OnInit {
       }
     }).subscribe((data: Item) => {
       this.items = data;
+      // console.log(this.items);
     });
   }
+  title: string;
+  url = 'http://localhost:8081/rest/items';
 
   items: Item;
 
-  url = 'http://localhost:8081/rest/items';
+  selectedItem = Item;
 
   ngOnInit() {
+    // console.log(this.items);
     localStorage.getItem('token');
   }
 
-  ItemName(item: Item) {
-    this.service.currentItem = item;
+  itemName(item: Item) {
+      this.service.currentItem = item;
+      // @ts-ignore
+      this.selectedItem = item;
   }
 
+  search() {
+     if (this.title !== '') {
+       this.items = this.items.filter(res => {
+         return res.title.toLocaleLowerCase().match(this.title.toLocaleLowerCase());
+       });
+     } else if (this.title === '') {
+
+     }
+  }
 
 }
