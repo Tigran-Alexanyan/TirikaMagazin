@@ -24,7 +24,7 @@ export class ItemsListComponent implements OnInit {
   title: string;
   url = 'http://localhost:8081/rest/items';
 
-  items: Item;
+  items: Item[];
 
   selectedItem = Item;
 
