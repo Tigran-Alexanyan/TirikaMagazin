@@ -7,7 +7,7 @@
             <th scope="col" class="text text-center">Id</th>
             <th scope="col" class="text text-center">Title</th>
             <th scope="col" class="text text-center">Count</th>
-            <th scope="col" class="text text-center">Priceout</th>
+            <th scope="col" class="text text-center">PriceOut</th>
           </tr>
           </thead>
           <tbody *ngFor="let item of items" (click)="itemName(item)" [class.active]="item ===selectedItem">
@@ -21,7 +21,7 @@
         </table>
   </div>
     <br>
-    <div class="" >
+    <div class="">
       <div class="text text-right"> Поиск:<input type="text" #myInput  name="search"  [(ngModel)]="title" (input)="search()" style="float: right;width: 33%;"></div>
     </div>
 </div>

@@ -10,13 +10,14 @@ import {Item} from '../_models/items';
   styleUrls: ['./items-list.component.css']
 })
 export class ItemsListComponent implements OnInit {
+
   constructor(private router: Router, private http: HttpClient, private service: ServiceService) {
-    http.get(this.url, {
+    http.get<Item[]>(this.url, {
       headers: {
         'content-type': 'application/json',
         Authorization: `Bearer ${localStorage.getItem('token')}`
       }
-    }).subscribe((data: Item) => {
+    }).subscribe((data) => {
       this.items = data;
       // console.log(this.items);
     });
@@ -45,7 +46,7 @@ export class ItemsListComponent implements OnInit {
          return res.title.toLocaleLowerCase().match(this.title.toLocaleLowerCase());
        });
      } else if (this.title === '') {
-
+        this.ngOnInit();
      }
   }
 
