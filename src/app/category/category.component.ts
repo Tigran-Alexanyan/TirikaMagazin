@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
+import {Router, ActivatedRoute, ParamMap} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
 import { Category} from '../_models/category';
-import {Item} from "../_models/items";
-import {ServiceService} from "../service/service.service";
+import {Item} from '../_models/items';
+import {ServiceService} from '../service/service.service';
 
 
 @Component({
@@ -16,7 +16,7 @@ export class CategoryComponent implements OnInit {
 
   url = 'http://localhost:8081/rest/category';
 
-  constructor(private router: Router, private service: ServiceService, private http: HttpClient) {
+  constructor(private router: Router, private service: ServiceService, private http: HttpClient, private route: ActivatedRoute) {
     http.get(this.url, {
         headers: {
           'content-type': 'application/json',
@@ -25,16 +25,22 @@ export class CategoryComponent implements OnInit {
     }).subscribe((data: Category) => {
       this.categories = data;
     });
-
   }
 
   selectedCategory = Category;
 
-  catName(category: Category) {
+
+  catName(category: Category , id: number) {
     this.service.currentCat = category;
     // @ts-ignore
     this.selectedCategory = category;
+    this.http.get<any>(`http://localhost:8081/rest/items/findByCategory/${id}`).subscribe((data) => {
+        this.service.findByCategoryNumber = id;
+       // console.log(this.service.findByCategory);
+        this.service.findByCategoryArr = data;
+    });
   }
+
   ngOnInit() {
   }
 

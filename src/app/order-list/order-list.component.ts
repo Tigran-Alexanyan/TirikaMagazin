@@ -85,10 +85,6 @@ export class OrderListComponent implements OnInit {
     this.sum1();
   }
 
-  change() {
-
-  }
-
   prodat() {
     this.obj.push({itemId: this.service.currentItem.id});
     const body: string = JSON.stringify(
@@ -105,6 +101,8 @@ export class OrderListComponent implements OnInit {
     }).subscribe((data: Item) => {
       console.log(data);
     });
+    this.sum = 0;
+    this.clear();
   }
 
   ngOnInit() {

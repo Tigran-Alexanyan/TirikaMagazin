@@ -10,8 +10,8 @@
             <th scope="col" class="text text-center">PriceOut</th>
           </tr>
           </thead>
-          <tbody *ngFor="let item of items" (click)="itemName(item)" [class.active]="item ===selectedItem">
-            <tr *ngIf="this.service.currentCat.id === item.id">
+          <tbody *ngFor="let item of this.service.findByCategoryArr | filter:title" (click)="itemName(item)" [class.active]="item === selectedItem">
+            <tr>
               <td class="text text-center">{{item.id}}</td>
               <td class="text text-center">{{item.title}}</td>
               <td class="text text-center">{{item.count}}</td>
@@ -22,7 +22,7 @@
   </div>
     <br>
     <div class="">
-      <div class="text text-right"> Поиск:<input type="text" #myInput  name="search"  [(ngModel)]="title" (input)="search()" style="float: right;width: 33%;"></div>
+      <div class="text text-right"> Поиск:<input type="text" name="search"  [(ngModel)]="title"  style="float: right;width: 33%;"></div>
     </div>
 </div>
 </div>

@@ -17,6 +17,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './header/header.component';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { ServiceService } from './service/service.service';
+// @ts-ignore
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,7 @@ import { ServiceService } from './service/service.service';
     BrowserAnimationsModule,
     MatCheckboxModule,
     FormsModule,
+    Ng2SearchPipeModule,
   ],
   providers: [ServiceService, ItemsListComponent, OrderListComponent],
   bootstrap: [AppComponent]
