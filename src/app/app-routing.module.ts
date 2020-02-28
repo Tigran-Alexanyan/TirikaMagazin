@@ -8,6 +8,7 @@ import { ItemsListComponent} from './items-list/items-list.component';
 import { LoginComponent} from './login/login.component';
 import { RegisterComponent} from './register/register.component';
 import {OptionComponent} from './option/option.component';
+import {ProdajiComponent} from './prodaji/prodaji.component';
 
 
 const routes: Routes = [
@@ -19,7 +20,8 @@ const routes: Routes = [
   { path: 'order', component: OrderListComponent },
   { path: 'category', component: CategoryComponent },
   { path: 'items', component: ItemsListComponent },
-  { path: 'option', component: OptionComponent },
+  { path: 'prodaja', component: OptionComponent },
+  { path: 'prodaji', component: ProdajiComponent },
 ];
 
 @NgModule({

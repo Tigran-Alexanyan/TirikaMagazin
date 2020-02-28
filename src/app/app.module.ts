@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
@@ -10,7 +9,7 @@ import { CategoryComponent } from './category/category.component';
 import { ItemsListComponent } from './items-list/items-list.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule, HttpInterceptor} from '@angular/common/http';
 import { OptionComponent } from './option/option.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -19,6 +18,13 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import { ServiceService } from './service/service.service';
 // @ts-ignore
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { ProdajiComponent } from './prodaji/prodaji.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+// tslint:disable-next-line:import-spacing
+import { MatNativeDateModule } from '@angular/material';
+import {MatInputModule} from '@angular/material/input';
+
 
 @NgModule({
   declarations: [
@@ -32,6 +38,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     RegisterComponent,
     OptionComponent,
     HeaderComponent,
+    ProdajiComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,8 +49,12 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     MatCheckboxModule,
     FormsModule,
     Ng2SearchPipeModule,
+    MatFormFieldModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatInputModule,
   ],
-  providers: [ServiceService, ItemsListComponent, OrderListComponent],
+  providers: [ServiceService, ItemsListComponent, OrderListComponent, MatDatepickerModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

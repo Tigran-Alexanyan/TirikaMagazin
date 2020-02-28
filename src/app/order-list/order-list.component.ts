@@ -90,8 +90,7 @@ export class OrderListComponent implements OnInit {
     const body: string = JSON.stringify(
       {phoneNumber: this.loginForm.get('phone').value, orderItemDtos: this.obj},
     );
-
-    console.log(body);
+    // console.log(body);
     const url = 'http://localhost:8081/rest/orders';
     this.http.post(url, body, {
       headers: {
