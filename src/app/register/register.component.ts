@@ -19,6 +19,9 @@ export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
   loading = false;
   submitted = false;
+  public login;
+  public password;
+  public errors;
 
 
   constructor(
@@ -63,6 +66,10 @@ export class RegisterComponent implements OnInit {
     this.submitted = true;
     if (this.registerForm.invalid) {
       return;
+    }
+
+    if (this.login !== this.password ) {
+      this.errors = 'Incorrect Login or Password';
     }
 
     this.loading = true;

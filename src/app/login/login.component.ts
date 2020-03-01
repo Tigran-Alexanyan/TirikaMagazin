@@ -3,6 +3,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Router , ActivatedRoute } from '@angular/router';
 import { first } from 'rxjs/operators';
 import { AuthenticationService } from '../service/authentication.service';
+import {error} from 'util';
 
 
 @Component({
@@ -16,6 +17,9 @@ export class LoginComponent implements OnInit {
   loading = false;
   submitted = false;
   returnUrl: string;
+  public login;
+  public password;
+  public errors;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -40,13 +44,19 @@ export class LoginComponent implements OnInit {
   }
 
 
-  get f() { return this.loginForm.controls; }
+  get f() {
+    return this.loginForm.controls;
+  }
 
   onSubmit() {
     this.submitted = true;
 
     if (this.loginForm.invalid) {
       return;
+    }
+
+    if (this.login !== this.password ) {
+        this.errors = 'Incorrect Login or Password';
     }
 
     this.loading = true;

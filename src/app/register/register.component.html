@@ -22,7 +22,7 @@
         <br>
 
         <div class="form-group">
-          <input type="email" class="input"  name="login" formControlName="login" placeholder="Login"/>
+          <input type="email" class="input"  name="login" formControlName="login" placeholder="Login" [(ngModel)]="login"/>
           <div class="alert alert-danger"
                *ngIf="registerForm.controls['login'].invalid && registerForm.controls['login'].touched">
             Некорректный login
@@ -30,7 +30,7 @@
         </div>
         <br>
         <div class="form-group">
-          <input  type="password" class="input" name="password" formControlName="password" placeholder="Password"/>
+          <input  type="password" class="input" name="password" formControlName="password" placeholder="Password" [(ngModel)]="password"/>
           <div class="alert alert-danger"
                *ngIf="registerForm.controls['password'].invalid && registerForm.controls['password'].touched">
             Некорректный password
@@ -38,7 +38,8 @@
         </div>
         <br>
         <div class="form-group">
-          <button type="button" [disabled]="registerForm.invalid"  class="btn btn-primary btn-block">
+          <p class="text text-center text-danger">{{errors}}</p>
+          <button type="button" routerLink="/login" [disabled]="registerForm.invalid"  class="btn btn-primary btn-block">
             Submit
           </button><br>
           <a routerLink="/login">? login</a>
