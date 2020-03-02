@@ -24,6 +24,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 // tslint:disable-next-line:import-spacing
 import { MatNativeDateModule } from '@angular/material';
 import {MatInputModule} from '@angular/material/input';
+import { ZakupkiComponent } from './zakupki/zakupki.component';
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import {MatInputModule} from '@angular/material/input';
     OptionComponent,
     HeaderComponent,
     ProdajiComponent,
+    ZakupkiComponent,
   ],
   imports: [
     BrowserModule,

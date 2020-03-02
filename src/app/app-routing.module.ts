@@ -9,6 +9,7 @@ import { LoginComponent} from './login/login.component';
 import { RegisterComponent} from './register/register.component';
 import {OptionComponent} from './option/option.component';
 import {ProdajiComponent} from './prodaji/prodaji.component';
+import {ZakupkiComponent} from './zakupki/zakupki.component';
 
 
 const routes: Routes = [
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'items', component: ItemsListComponent },
   { path: 'prodaja', component: OptionComponent },
   { path: 'prodaji', component: ProdajiComponent },
+  { path: 'zakupki', component: ZakupkiComponent },
 ];
 
 @NgModule({

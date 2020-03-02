@@ -1,6 +1,7 @@
 export class SoldItems {
-  date: string;
+  id: number;
+  date: number;
   itemMainDtos: object [] = [];
   orderSum: number;
-  people: object;
+  people: string;
 }
