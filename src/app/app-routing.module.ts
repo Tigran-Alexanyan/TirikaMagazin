@@ -10,6 +10,7 @@ import { RegisterComponent} from './register/register.component';
 import {OptionComponent} from './option/option.component';
 import {ProdajiComponent} from './prodaji/prodaji.component';
 import {ZakupkiComponent} from './zakupki/zakupki.component';
+import {OptionOrderComponent} from './option-order/option-order.component';
 
 
 const routes: Routes = [
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'prodaja', component: OptionComponent },
   { path: 'prodaji', component: ProdajiComponent },
   { path: 'zakupki', component: ZakupkiComponent },
+  { path: 'optionorder', component: OptionOrderComponent },
 ];
 
 @NgModule({

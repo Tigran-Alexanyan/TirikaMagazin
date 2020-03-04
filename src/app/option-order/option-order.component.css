@@ -1,0 +1,62 @@
+.r{
+  min-width: 100%;
+
+}
+
+.input{
+  width: 100%;
+  padding: 5px;
+}
+
+.table{
+  height: 508px;
+  width: 100%;
+}
+
+.btn1{
+  width: 100%;
+  font-size: 1em;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.col-4{
+  padding: 0;
+}
+.col-12{
+  padding: 0;
+}
+.btn2{
+  display: block;
+  width: 100%;
+}
+.mainPrice{
+  padding: 0 !important;
+  margin-left: 0;
+  margin-right: -30px;
+
+}
+
+#scroll1::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  background-color: #F5F5F5;
+}
+
+#scroll1::-webkit-scrollbar
+{
+  width: 8px;
+  background-color: #F5F5F5;
+}
+
+#scroll1::-webkit-scrollbar-thumb
+{
+  border-radius: 3px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  background-color: darkgray;
+}
+
+.active{
+  background-color: #007bbf;
+}

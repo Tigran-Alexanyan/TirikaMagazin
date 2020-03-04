@@ -25,6 +25,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material';
 import {MatInputModule} from '@angular/material/input';
 import { ZakupkiComponent } from './zakupki/zakupki.component';
+import { OptionOrderComponent } from './option-order/option-order.component';
 
 
 @NgModule({
@@ -41,6 +42,7 @@ import { ZakupkiComponent } from './zakupki/zakupki.component';
     HeaderComponent,
     ProdajiComponent,
     ZakupkiComponent,
+    OptionOrderComponent,
   ],
   imports: [
     BrowserModule,
