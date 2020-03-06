@@ -90,7 +90,6 @@ export class OptionOrderComponent implements OnInit {
       // itemId: this.service.currentItem.itemId,
       count: this.service.currentItem.count,
       priceOut: this.service.currentItem.priceOut,
-      // priceIn: this.service.currentItem.priceIn
     }
       );
     const body: string = JSON.stringify(

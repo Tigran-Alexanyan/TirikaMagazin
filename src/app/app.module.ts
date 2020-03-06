@@ -26,6 +26,7 @@ import { MatNativeDateModule } from '@angular/material';
 import {MatInputModule} from '@angular/material/input';
 import { ZakupkiComponent } from './zakupki/zakupki.component';
 import { OptionOrderComponent } from './option-order/option-order.component';
+import {MatButtonModule} from "@angular/material/button";
 
 
 @NgModule({
@@ -57,6 +58,7 @@ import { OptionOrderComponent } from './option-order/option-order.component';
     MatDatepickerModule,
     MatNativeDateModule,
     MatInputModule,
+    MatButtonModule,
   ],
   providers: [ServiceService, ItemsListComponent, OrderListComponent, MatDatepickerModule],
   bootstrap: [AppComponent]

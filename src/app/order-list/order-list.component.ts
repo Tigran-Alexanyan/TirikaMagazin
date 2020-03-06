@@ -25,7 +25,7 @@ export class OrderListComponent implements OnInit {
   });
 
   public obj: object[] = [];
-  public sum = 0;
+  public sum = '0.00';
 
   selectedItem: Item;
 
@@ -100,7 +100,7 @@ export class OrderListComponent implements OnInit {
     }).subscribe((data: Item) => {
       console.log(data);
     });
-    this.sum = 0;
+    this.sum = '0.00';
     this.clear();
   }
 
