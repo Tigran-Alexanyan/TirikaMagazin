@@ -23,7 +23,7 @@ export class ItemsIncameComponent implements OnInit {
     });
   }
   title: string;
-   url = 'http://localhost:8081/rest/items/inCame';
+   url = 'http://localhost:8081/rest/items/itemsForInCame';
 
   itemsInCame: InCame[];
 

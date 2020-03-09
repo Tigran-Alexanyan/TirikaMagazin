@@ -88,8 +88,7 @@ export class OptionOrderComponent implements OnInit {
 
   prodat() {
     this.obj.push({
-        id:  this.service.itemsInCame.id,
-        title: this.service.itemsInCame.title,
+        itemId:  this.service.itemsInCame.id,
         count: this.service.itemsInCame.count,
         priceOut: this.service.itemsInCame.priceOut,
         priceIn: this.service.itemsInCame.priceIn
@@ -98,7 +97,7 @@ export class OptionOrderComponent implements OnInit {
       {phoneNumber: this.loginForm.get('phone').value, orderItemDtos: this.obj
       });
     console.log(body);
-    const url = 'http://localhost:8081/rest/orders';
+    const url = 'http://localhost:8081/rest/incame';
     this.http.post(url, body, {
       headers: {
         'content-type': 'application/json',
