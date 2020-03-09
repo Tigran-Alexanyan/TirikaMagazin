@@ -3,40 +3,41 @@ import {Router} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
 import {ServiceService} from '../service/service.service';
 import {Item} from '../_models/items';
+import {InCame} from '../_models/InCame';
 
 @Component({
-  selector: 'app-items-list',
-  templateUrl: './items-list.component.html',
-  styleUrls: ['./items-list.component.css']
+  selector: 'app-items-incame',
+  templateUrl: './items-incame.component.html',
+  styleUrls: ['./items-incame.component.css']
 })
-export class ItemsListComponent implements OnInit {
-
+export class ItemsIncameComponent implements OnInit {
   constructor(private router: Router, private http: HttpClient, private service: ServiceService) {
-    http.get<Item[]>(this.url, {
+    http.get<InCame[]>(this.url, {
       headers: {
         'content-type': 'application/json',
         Authorization: `Bearer ${localStorage.getItem('token')}`
       }
     }).subscribe((data) => {
-      this.items = data;
-     // console.log(this.items);
+      this.itemsInCame = data;
+     // console.log(this.itemsInCame);
     });
   }
   title: string;
-     url = 'http://localhost:8081/rest/items';
+   url = 'http://localhost:8081/rest/items/inCame';
 
-  items: Item[];
+  itemsInCame: InCame[];
 
-  selectedItem = Item;
+  selectedItem = InCame;
 
   ngOnInit() {
     // console.log(this.items);
     localStorage.getItem('token');
   }
 
-  itemName(item: Item) {
-      this.service.currentItem = item;
-      // @ts-ignore
-      this.selectedItem = item;
+  itemName(item: InCame) {
+    this.service.itemsInCame = item;
+    // @ts-ignore
+    this.selectedItem = item;
   }
+
 }

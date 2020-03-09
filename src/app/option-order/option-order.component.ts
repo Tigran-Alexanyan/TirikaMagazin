@@ -3,8 +3,10 @@ import { PurchaseItems} from '../_models/purchaseItems';
 import {Router} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
 import {ServiceService} from '../service/service.service';
-import {Item} from '../_models/items';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {InCame} from '../_models/InCame';
+// import {Item} from '../_models/items';
+
 
 @Component({
   selector: 'app-option-order',
@@ -12,12 +14,11 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
   styleUrls: ['./option-order.component.css']
 })
 export class OptionOrderComponent implements OnInit {
+  constructor(private router: Router, public service: ServiceService, private http: HttpClient) {}
 
-  constructor(private router: Router, public service: ServiceService, private http: HttpClient) {
-  }
-  private removeElement: Item;
+  private removeElement: InCame;
 
-  public items: Item[] = [];
+  public items: InCame[] = [];
 
 
   loginForm = new FormGroup({
@@ -27,22 +28,22 @@ export class OptionOrderComponent implements OnInit {
   public obj: object[] = [];
   public sum = 0;
 
-  selectedItem: Item;
+  selectedItem: InCame;
 
   add() {
-    if (!this.service.currentItem) {
+    if (!this.service.itemsInCame) {
       return;
     }
-    const itemExists = this.items.find(i => i.id === this.service.currentItem.id);
+    const itemExists = this.items.find(i => i.id === this.service.itemsInCame.id);
 
     if (itemExists) {
       itemExists.count += 1;
       this.countDecrement(itemExists);
     } else {
-      const item = new Item();
-      item.id = this.service.currentItem.id;
-      item.title = this.service.currentItem.title;
-      item.priceOut = this.service.currentItem.priceOut;
+      const item = new InCame();
+      item.id = this.service.itemsInCame.id;
+      item.title = this.service.itemsInCame.title;
+      item.priceOut = this.service.itemsInCame.priceOut;
       item.count = 1;
       this.items.push(item);
     }
@@ -58,17 +59,17 @@ export class OptionOrderComponent implements OnInit {
     });
   }
 
-  removeItem(item: Item) {
+  removeItem(item: InCame) {
     this.removeElement = item;
     this.selectedItem = item;
   }
 
-  countDecrement(item: Item) {
+  countDecrement(item: InCame) {
     if (item.count > 0) {
       item.count -= 1;
     }
   }
-  countIncrement(item: Item) {
+  countIncrement(item: InCame) {
     item.count += 1;
   }
 
@@ -87,22 +88,23 @@ export class OptionOrderComponent implements OnInit {
 
   prodat() {
     this.obj.push({
-      // itemId: this.service.currentItem.itemId,
-      count: this.service.currentItem.count,
-      priceOut: this.service.currentItem.priceOut,
-    }
-      );
+        id:  this.service.itemsInCame.id,
+        title: this.service.itemsInCame.title,
+        count: this.service.itemsInCame.count,
+        priceOut: this.service.itemsInCame.priceOut,
+        priceIn: this.service.itemsInCame.priceIn
+    });
     const body: string = JSON.stringify(
-      {phoneNumber: this.loginForm.get('phone').value, orderItemDtos: this.obj},
-    );
+      {phoneNumber: this.loginForm.get('phone').value, orderItemDtos: this.obj
+      });
     console.log(body);
-    const url = 'http://localhost:8081/rest/incame';
+    const url = 'http://localhost:8081/rest/orders';
     this.http.post(url, body, {
       headers: {
         'content-type': 'application/json',
         Authorization: `Bearer ${localStorage.getItem('token')}`
       }
-    }).subscribe((data: Item) => {
+    }).subscribe((data: InCame) => {
       console.log(data);
     });
     this.sum = 0;

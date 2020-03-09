@@ -27,6 +27,7 @@ import {MatInputModule} from '@angular/material/input';
 import { ZakupkiComponent } from './zakupki/zakupki.component';
 import { OptionOrderComponent } from './option-order/option-order.component';
 import {MatButtonModule} from "@angular/material/button";
+import { ItemsIncameComponent } from './items-incame/items-incame.component';
 
 
 @NgModule({
@@ -44,6 +45,7 @@ import {MatButtonModule} from "@angular/material/button";
     ProdajiComponent,
     ZakupkiComponent,
     OptionOrderComponent,
+    ItemsIncameComponent,
   ],
   imports: [
     BrowserModule,

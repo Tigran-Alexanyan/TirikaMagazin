@@ -15,7 +15,10 @@ export class ServiceService {
   public findByCategoryNumber: number;
   // tslint:disable-next-line:ban-types
   public findByCategoryArr: Object[] = [];
+  public itemsInCame;
+  public priceOut;
   constructor() {
-    console.log(this.findByCategoryArr);
+    // console.log(this.itemsInCame);
+    // console.log(this.findByCategoryArr);
   }
 }

@@ -13,8 +13,7 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 })
 export class OrderListComponent implements OnInit {
 
-  constructor(private router: Router, public service: ServiceService, private http: HttpClient) {
-  }
+  constructor(private router: Router, public service: ServiceService, private http: HttpClient) {}
   private removeElement: Item;
 
   public items: Item[] = [];
@@ -25,7 +24,7 @@ export class OrderListComponent implements OnInit {
   });
 
   public obj: object[] = [];
-  public sum = '0.00';
+  public sum = 0;
 
   selectedItem: Item;
 
@@ -100,7 +99,7 @@ export class OrderListComponent implements OnInit {
     }).subscribe((data: Item) => {
       console.log(data);
     });
-    this.sum = '0.00';
+    this.sum = 0;
     this.clear();
   }
 
