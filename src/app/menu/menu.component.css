@@ -1,19 +1,26 @@
-
-.col-3{
-  max-width: 20%;
-}
+/*.col-3{*/
+/*  max-width: 20%;*/
+/*}*/
 .wrapper{
   max-width: 100%;
 }
 
 .sidebar{
-  width: 100%;
+  width: 100%; padding: 3px;
 }
 li {
   list-style-type: none;
+}
+
+a{
+  font-size: 1em;
 }
 
 .actives{
   color: red;
 }
 
+.fa{
+ padding: 5px;
+  margin-left: -26px;
+}

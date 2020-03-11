@@ -27,6 +27,7 @@ export class ProdajiComponent implements OnInit {
     }).subscribe((data) => {
       //  @ts-ignore
       this.soldItemsList = data;
+      console.log(this.soldItemsList);
       for (let i = 0; i < this.soldItemsList.length ; i++) {
         // @ts-ignore
         console.log(this.soldItemsList[i].itemMainDtos[i].id);
@@ -70,8 +71,8 @@ export class ProdajiComponent implements OnInit {
        Authorization: `Bearer ${localStorage.getItem('token')}`
      }
    }).subscribe((data) => {
-     //  @ts-ignore
-     this.soldItemsList = data;
+       this.soldItemsList = data;
+       console.log(this.soldItemsList);
    });
   }
 

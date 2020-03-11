@@ -28,6 +28,8 @@ import { ZakupkiComponent } from './zakupki/zakupki.component';
 import { OptionOrderComponent } from './option-order/option-order.component';
 import {MatButtonModule} from "@angular/material/button";
 import { ItemsIncameComponent } from './items-incame/items-incame.component';
+import { PrixodComponent } from './prixod/prixod.component';
+import { RasxodComponent } from './rasxod/rasxod.component';
 
 
 @NgModule({
@@ -46,6 +48,8 @@ import { ItemsIncameComponent } from './items-incame/items-incame.component';
     ZakupkiComponent,
     OptionOrderComponent,
     ItemsIncameComponent,
+    PrixodComponent,
+    RasxodComponent,
   ],
   imports: [
     BrowserModule,

@@ -25,10 +25,9 @@
         </mat-form-field>
       </div>
       <div style="margin-left: 5%;margin-top: 8px">
-        <button class="btn btn-primary" routerLink="/optionorder">kupit</button>
+        <button class="btn btn-primary" routerLink="/optionorder">Купит</button>
       </div>
-      <div class="col-12" style="margin-left: 5%; height: 80vh" id="scroll">
-        <div class="row">
+      <div class="col-12" style="margin-left: 5%; height: 72vh; overflow-x: auto" id="scroll1">
           <table class="table table-hover">
             <thead>
             <tr>
@@ -43,13 +42,12 @@
             <tr *ngFor="let list of this.purchaseItemsList">
               <td class="text">{{list.id}}</td>
               <td class="text">{{list.date}}</td>
-              <td class="text">{{list.itemMainDtos[0].count}}[{{list.itemMainDtos[0].title}}]</td>
+              <td class="text"><a *ngFor="let t of list.itemMainDtos">{{t.count}}[{{t.title}}]</a></td>
               <td class="text">{{list.orderSum}}</td>
-              <td class="text">{{list.people.name}}</td>
+              <td class="text">{{list.userDto.name}}</td>
             </tr>
             </tbody>
           </table>
-        </div>
       </div>
     </div>
 

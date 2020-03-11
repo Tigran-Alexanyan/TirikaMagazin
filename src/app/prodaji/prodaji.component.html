@@ -24,29 +24,27 @@
           <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
       </div>
-      <div class="col-12 " style="margin-left: 5%; height: 80vh">
-        <div class="row">
+      <div class="col-12" style="margin-left: 5%; height: 72vh; overflow-x: auto" id="scroll1">
           <table class="table table-hover">
             <thead>
             <tr>
-              <th scope="col" class="text ">Id</th>
-              <th scope="col" class="text ">Date</th>
-              <th scope="col" class="text ">Items</th>
-              <th scope="col" class="text ">PriceOut</th>
-              <th scope="col" class="text ">People</th>
+              <th scope="col" class="text">Id</th>
+              <th scope="col" class="text">Date</th>
+              <th scope="col" class="text">Items</th>
+              <th scope="col" class="text">PriceOut</th>
+              <th scope="col" class="text">People</th>
             </tr>
             </thead>
             <tbody >
             <tr *ngFor="let list of this.soldItemsList">
-              <td class="text ">{{list.id}}</td>
-              <td class="text ">{{list.date}}</td>
-              <td class="text ">{{list.itemMainDtos[0].count}}[{{list.itemMainDtos[0].title}}]</td>
-              <td class="text ">{{list.orderSum}}</td>
-              <td class="text ">{{list.people.name}}</td>
+              <td class="text">{{list.id}}</td>
+              <td class="text">{{list.date}}</td>
+              <td class="text"><a *ngFor="let t of list.itemMainDtos">{{t.count}}[{{t.title}}]</a></td>
+              <td class="text">{{list.orderSum}}</td>
+              <td class="text">{{list.userDto.name}}</td>
             </tr>
             </tbody>
           </table>
-        </div>
       </div>
     </div>
   </div>

@@ -10,7 +10,7 @@
         <div class="form-group">
           <input type="text" class="input"  name="name" formControlName="phone" placeholder="Phone number..."/></div>
       </form>
-      <div class="row border border-secondary" id="scroll1"  style="min-width: 60%;height: 464px;overflow-x: auto;top: 5px">
+      <div class="row border border-secondary" id="scroll1"  style="min-width: 60%;height: 385px;overflow-x: auto;top: 5px">
         <div class="col-12 p-3" style="height: 540px">
           <div class="table">
             <div *ngFor="let item of items" [class.active]="item === selectedItem">
@@ -28,10 +28,14 @@
       </div>
       <div class="row p-3 mainPrice">
         <div class="row r">
-          <div class="col-4 border border-secondary text-center"><button mat-stroked-button color="primary" (click)="add()" class="btn1"><a>Добавить товара</a></button></div>
-          <div class="col-4 border border-secondary text-center"><button mat-stroked-button color="primary" (click)="delete()" class="btn1"><a>Удалить товара</a></button></div>
-          <div class="col-4 border border-secondary text-center"><button mat-stroked-button color="primary" (click)="clear()" class="btn1"><a>Очистить</a></button></div>
+          <div class="col-12 border border-secondary text-center"><button mat-stroked-button color="primary" (click)="add()" class="btn2"><a>Добавить товара</a></button></div>
         </div>
+          <div class="row r">
+            <div class="col-12 border border-secondary text-center"><button mat-stroked-button color="primary" (click)="delete()" class="btn2"><a>Удалить товара</a></button></div>
+          </div>
+         <div class="row r">
+           <div class="col-12 border border-secondary text-center"><button mat-stroked-button color="primary" (click)="clear()" class="btn2"><a>Очистить</a></button></div>
+         </div>
         <div class="row r">
           <div class="col-12 border border-secondary" style="height: 120px">
             <div>

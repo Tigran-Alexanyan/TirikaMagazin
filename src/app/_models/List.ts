@@ -3,5 +3,6 @@ export class SoldItems {
   date: number;
   itemMainDtos: object [] = [];
   orderSum: number;
-  people: string;
+  people: object;
+  userDto: object;
 }

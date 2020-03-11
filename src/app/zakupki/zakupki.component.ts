@@ -17,7 +17,7 @@ export class ZakupkiComponent implements OnInit {
 
   public dateOne: string;
   public dateTwo: string;
-  url = 'http://localhost:8081/rest/incame/range/2020-02-01,2020-02-24';
+  url = 'http://localhost:8081/rest/incame/range';
 
   constructor(private router: Router, private http: HttpClient) {
     this.http.get<PurchaseItems[]>(this.url, {
