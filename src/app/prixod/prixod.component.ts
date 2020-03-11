@@ -74,7 +74,7 @@ export class PrixodComponent implements OnInit {
     });
   }
     this.outComing = null;
-    this.description = '';
+    this.description = ' ';
   }
   ngOnInit() {
   }

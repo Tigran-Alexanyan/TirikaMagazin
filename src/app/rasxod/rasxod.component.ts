@@ -56,7 +56,7 @@ export class RasxodComponent implements OnInit {
       const body = JSON.stringify({outComing: this.outComing, description: this.description});
       // this.sectionId++;
       // console.log(body);
-      this.http.post<OutComingCash[]>('http://localhost:8081/rest/transfer/takeCash', body, {
+      this.http.post<OutComingCash[]>('http://localhost:8081/rest/transfer/takeCash',  body, {
         headers: {
           'content-type': 'application/json',
           Authorization: `Bearer ${localStorage.getItem('token')}`

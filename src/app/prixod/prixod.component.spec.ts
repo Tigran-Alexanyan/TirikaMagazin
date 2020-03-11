@@ -6,7 +6,7 @@ describe('PrixodComponent', () => {
   let component: PrixodComponent;
   let fixture: ComponentFixture<PrixodComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(async(() =>  {
     TestBed.configureTestingModule({
       declarations: [ PrixodComponent ]
     })

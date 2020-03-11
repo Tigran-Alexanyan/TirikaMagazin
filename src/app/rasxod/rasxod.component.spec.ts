@@ -6,7 +6,7 @@ describe('RasxodComponent', () => {
   let component: RasxodComponent;
   let fixture: ComponentFixture<RasxodComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(async(() =>  {
     TestBed.configureTestingModule({
       declarations: [ RasxodComponent ]
     })
