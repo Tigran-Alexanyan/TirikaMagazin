@@ -6,25 +6,25 @@
       <app-menu></app-menu>
     </div>
     <div class="row">
-      <div style="margin-left: 5%; width: 20%">
-        <p>Добавыть Сумму</p>
-        <input type="text" style="padding: 5px" [(ngModel)]="outComing" placeholder="Добавыть сумму...">
+      <div style="margin-left: 6%; width: 20%">
+        <p>Добавить Сумму</p>
+        <input type="text" style="padding: 5px" [(ngModel)]="outComing" placeholder="Добавить сумму...">
       </div>
       <div style="margin-left: 7%">
-        <p>Добавыть Description</p>
-        <textarea type="text" style="padding: 5px" [(ngModel)]="description"  placeholder="Description..."></textarea>
+        <p>Добавить описание</p>
+        <textarea type="text" style="padding: 5px" [(ngModel)]="description"  placeholder="Описание..."></textarea>
       </div>
            <div style="margin-left: 7%;margin-top: 40px">
-             <button class="btn btn-primary" (click)="add()">Add</button>
+             <button class="btn btn-primary" (click)="add()">Добавить</button>
       </div>
       <div class="col-12 " style="margin-left: 5%; height: 72vh; overflow-x: auto" id="scroll1">
           <table class="table table-hover">
             <thead>
             <tr>
-              <th scope="col" class="text">Id</th>
-              <th scope="col" class="text">Date</th>
-              <th scope="col" class="text">outComing</th>
-              <th scope="col" class="text">description</th>
+              <th scope="col" class="text">#</th>
+              <th scope="col" class="text">Дата</th>
+              <th scope="col" class="text">Вступающий</th>
+              <th scope="col" class="text">Описание</th>
             </tr>
             </thead>
             <tbody >

@@ -6,34 +6,30 @@
       <form [formGroup]="registerForm" (click)="onSubmit()">
         <div class="form-group">
           <input type="text" class="input"  name="name" formControlName="name" placeholder="Name"/>
-          <div class="alert alert-danger"
-               *ngIf="registerForm.controls['name'].invalid && registerForm.controls['name'].touched">
-            Некорректный name
+          <div class="" style="color: red" *ngIf="registerForm.controls['name'].invalid && registerForm.controls['name'].touched">
+            Enter your name
           </div>
         </div>
         <br>
         <div class="form-group">
           <input type="text" class="input"  name="surname" formControlName="surname" placeholder="Surname"/>
-          <div class="alert alert-danger"
-               *ngIf="registerForm.controls['surname'].invalid && registerForm.controls['surname'].touched">
-            Некорректный surname
+          <div class="" style="color: red" *ngIf="registerForm.controls['surname'].invalid && registerForm.controls['surname'].touched">
+            Enter your surname
           </div>
         </div>
         <br>
 
         <div class="form-group">
-          <input type="email" class="input"  name="login" formControlName="login" placeholder="Login" [(ngModel)]="login"/>
-          <div class="alert alert-danger"
-               *ngIf="registerForm.controls['login'].invalid && registerForm.controls['login'].touched">
-            Некорректный login
+          <input type="email" class="input"  name="login" formControlName="login" placeholder="Login"/>
+          <div class="" style="color: red" *ngIf="registerForm.controls['login'].invalid && registerForm.controls['login'].touched">
+            Enter your login
           </div>
         </div>
         <br>
         <div class="form-group">
-          <input  type="password" class="input" name="password" formControlName="password" placeholder="Password" [(ngModel)]="password"/>
-          <div class="alert alert-danger"
-               *ngIf="registerForm.controls['password'].invalid && registerForm.controls['password'].touched">
-            Некорректный password
+          <input  type="password" class="input" name="password" formControlName="password" placeholder="Password"/>
+          <div class="" style="color: red" *ngIf="registerForm.controls['password'].invalid && registerForm.controls['password'].touched">
+            Enter your password
           </div>
         </div>
         <br>

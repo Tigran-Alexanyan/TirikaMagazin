@@ -12,7 +12,7 @@ import {ProdajiComponent} from './prodaji/prodaji.component';
 import {ZakupkiComponent} from './zakupki/zakupki.component';
 import {OptionOrderComponent} from './option-order/option-order.component';
 import {PrixodComponent} from './prixod/prixod.component';
-import {RasxodComponent} from "./rasxod/rasxod.component";
+import {RasxodComponent} from './rasxod/rasxod.component';
 
 
 const routes: Routes = [
@@ -24,12 +24,12 @@ const routes: Routes = [
   { path: 'order', component: OrderListComponent },
   { path: 'category', component: CategoryComponent },
   { path: 'items', component: ItemsListComponent },
-  { path: 'prodaja', component: OptionComponent },
-  { path: 'prodaji', component: ProdajiComponent },
-  { path: 'zakupki', component: ZakupkiComponent },
+  { path: 'продажа', component: OptionComponent },
+  { path: 'продажи', component: ProdajiComponent },
+  { path: 'закупки', component: ZakupkiComponent },
   { path: 'optionorder', component: OptionOrderComponent },
-  { path: 'prixod', component: PrixodComponent },
-  { path: 'rasxod', component: RasxodComponent },
+  { path: 'приход', component: PrixodComponent },
+  { path: 'расход', component: RasxodComponent },
 ];
 
 @NgModule({

@@ -6,29 +6,29 @@
       <app-menu></app-menu>
     </div>
     <div class="row">
-      <div style="margin-left: 5%; width: 20%">
+      <div style="margin-left: 6%; width: 20%">
         <p>Расход Сумму</p>
         <input type="text" style="padding: 5px" [(ngModel)]="outComing" placeholder="Расход сумму...">
       </div>
       <div style="margin-left: 7%">
-        <p>Расход Description</p>
-        <textarea type="text" style="padding: 5px" [(ngModel)]="description"  placeholder="Description..."></textarea>
+        <p>Расход описание</p>
+        <textarea type="text" style="padding: 5px" [(ngModel)]="description"  placeholder="описание..."></textarea>
       </div>
       <div style="margin-left: 7%;margin-top: 40px">
-        <button class="btn btn-primary" (click)="remove()">Remove</button>
+        <button class="btn btn-primary" (click)="remove()">Удалять</button>
       </div>
       <div class="col-12 " style="margin-left: 5%; height: 72vh; overflow-x: auto" id="scroll1">
         <table class="table table-hover" >
           <thead>
           <tr>
-            <th scope="col" class="text">Id</th>
-            <th scope="col" class="text">Date</th>
-            <th scope="col" class="text">outComing</th>
-            <th scope="col" class="text">description</th>
+            <th scope="col" class="text">#</th>
+            <th scope="col" class="text">Дата</th>
+            <th scope="col" class="text">Выходящий</th>
+            <th scope="col" class="text">Описание</th>
           </tr>
           </thead>
           <tbody>
-          <tr *ngFor="let list of this.outComingCashItemsList | filter:description">
+          <tr *ngFor="let list of this.outComingCashItemsList | filter:description" (click)="takeMe(list.sectionId)">
             <td class="text">{{list.sectionId}}</td>
             <td class="text">{{list.date}}</td>
             <td class="text">{{list.outComing}}</td>

@@ -30,12 +30,22 @@ export class RasxodComponent implements OnInit {
   }
   outComingCashItemsList: OutComingCash[];
 
+  public id: number;
+  takeMe(id: number) {
+     this.id = id;
+     console.log(id);
+  }
 
   remove() {
     if ( this.outComing === null && this.description === '') {
       // 2020-02-12T21:47:37.000+0000
       return;
     } else {
+      // for (let i = 0; i < this.outComingCashItemsList.length; i++) {
+      //     if (this.outComingCashItemsList[i].description === this.description) {
+              this.outComingCashItemsList.splice(this.id, 1);
+          // }
+      // }
       const d = new Date();
       const year = d.getFullYear();
       const month = d.getMonth() + 1;
@@ -51,7 +61,7 @@ export class RasxodComponent implements OnInit {
       // }
       const date = year + '-' + month + '-' + day + 'T' + h + ':' + m + ':' + s;
       console.log(date);
-      this.outComingCashItemsList.splice(-1, 1);
+     // this.outComingCashItemsList.splice(-1, 1);
 
       const body = JSON.stringify({outComing: this.outComing, description: this.description});
       // this.sectionId++;

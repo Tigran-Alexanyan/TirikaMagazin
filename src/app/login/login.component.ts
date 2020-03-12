@@ -69,7 +69,7 @@ export class LoginComponent implements OnInit {
           const token = data.token;
           console.log(token);
           localStorage.setItem('token', token);
-          this.router.navigate(['/prodaja']);
+          this.router.navigate(['/продажа']);
         });
   }
 }

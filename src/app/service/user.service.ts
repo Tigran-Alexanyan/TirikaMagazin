@@ -15,17 +15,18 @@ export class UserService {
     return this.http.get<Role[]>(this.urlRole);
   }
 
+  register(user: User) {
+    return this.http.post(this.urlUsers, user, {
+      headers: { 'content-type': 'application/json'}
+    });
+  }
+
   getAllUsers() {
     return this.http.get<User[]>(this.urlUsers);
   }
 
 
-  register(user: User) {
-    return this.http.post(this.urlUsers, user, {
-      headers: { 'content-type': 'application/json'
-      }
-    });
-  }
+
 
   delete(id: number) {
     return this.http.delete(`/users/${id}`);

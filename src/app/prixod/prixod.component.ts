@@ -51,10 +51,11 @@ export class PrixodComponent implements OnInit {
       // if (day < 9) {
       //   day =   day;
       // }
+      location.href = '/prixod';
       const date = year + '-' + month + '-' + day + 'T' + h + ':' + m + ':' + s;
       console.log(date);
       this.inComingCashItemsList.push({
-       sectionId: this.sectionId += 1,
+       sectionId: this.sectionId ,
        outComing: this.outComing,
        description: this.description,
         date,
@@ -74,7 +75,7 @@ export class PrixodComponent implements OnInit {
     });
   }
     this.outComing = null;
-    this.description = ' ';
+    this.description = '';
   }
   ngOnInit() {
   }
