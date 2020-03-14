@@ -13,6 +13,8 @@ import {ZakupkiComponent} from './zakupki/zakupki.component';
 import {OptionOrderComponent} from './option-order/option-order.component';
 import {PrixodComponent} from './prixod/prixod.component';
 import {RasxodComponent} from './rasxod/rasxod.component';
+import {KasiComponent} from "./kasi/kasi.component";
+import {ListKasiComponent} from "./list-kasi/list-kasi.component";
 
 
 const routes: Routes = [
@@ -30,6 +32,8 @@ const routes: Routes = [
   { path: 'optionorder', component: OptionOrderComponent },
   { path: 'приход', component: PrixodComponent },
   { path: 'расход', component: RasxodComponent },
+  { path: 'kasi', component: KasiComponent },
+  { path: 'listKasi', component: ListKasiComponent },
 ];
 
 @NgModule({

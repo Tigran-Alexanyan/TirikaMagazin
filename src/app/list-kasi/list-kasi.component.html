@@ -1,0 +1,32 @@
+<!--<p>list-kasi works!</p>-->
+<app-header></app-header>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-2">
+      <app-menu></app-menu>
+    </div>
+      <div class="col-10" style="padding: 50px">
+        <div class="border border-primary" style="width: 50%;padding: 59px" >
+          <div align="center"><h2>Duq cankanum eq poxancel gumar<br><span>{{this.service.transferList.name}}-ic dzer hashvin</span></h2></div><br>
+          <div>Id- <a>{{this.service.transferList.id}}</a></div><br>
+          <div>
+            <a>poxancvox gumari chap</a><br>
+            <input type="text" style="width: 100%;padding: 5px;border-radius: 5px" [(ngModel)]="salary">
+          </div><br>
+          <div>
+             <a>Description</a><br>
+             <textarea style="width: 100%;padding: 10px;border-radius: 5px" [(ngModel)]="d"></textarea>
+          </div>
+          <div>
+            <a>arka gumar</a><br>
+            <hr>
+            <p>{{this.service.transferList.incoming}}</p>
+            <hr>
+          </div>
+          <div align="center">
+            <button class="btn btn-success" (click)="sendMinus()">poxancel</button>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>

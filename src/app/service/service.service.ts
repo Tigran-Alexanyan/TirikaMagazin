@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Category} from '../_models/category';
-import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs';
+import {Transfer} from '../_models/transfer';
 
 
 @Injectable({
@@ -17,8 +19,21 @@ export class ServiceService {
   public findByCategoryArr: Object[] = [];
   public itemsInCame;
   public priceOut;
-  constructor() {
+  public transferList;
+  public d: string;
+  constructor(private http: HttpClient) {
+   // console.log(this.transferList);
     // console.log(this.itemsInCame);
     // console.log(this.findByCategoryArr);
+    // console.log(this.sendMinus.);
+  }
+
+  sendMinus(body: { outComing: number; description: string; sectionId: any }) {
+      return this.http.post('http://localhost:8081/rest/transfer', JSON.stringify(body) , {
+        headers: new HttpHeaders({
+          'content-type': 'application/json',
+           Authorization: `Bearer ${localStorage.getItem('token')}`,
+        })
+      });
   }
 }

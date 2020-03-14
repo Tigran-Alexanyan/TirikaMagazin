@@ -17,17 +17,13 @@ export class UserService {
 
   register(user: User) {
     return this.http.post(this.urlUsers, user, {
-      headers: { 'content-type': 'application/json'}
+      headers: {'content-type': 'application/json'}
     });
   }
 
   getAllUsers() {
     return this.http.get<User[]>(this.urlUsers);
   }
-
-
-
-
   delete(id: number) {
     return this.http.delete(`/users/${id}`);
   }

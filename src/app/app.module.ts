@@ -30,6 +30,8 @@ import {MatButtonModule} from "@angular/material/button";
 import { ItemsIncameComponent } from './items-incame/items-incame.component';
 import { PrixodComponent } from './prixod/prixod.component';
 import { RasxodComponent } from './rasxod/rasxod.component';
+import { KasiComponent } from './kasi/kasi.component';
+import { ListKasiComponent } from './list-kasi/list-kasi.component';
 
 
 @NgModule({
@@ -50,6 +52,8 @@ import { RasxodComponent } from './rasxod/rasxod.component';
     ItemsIncameComponent,
     PrixodComponent,
     RasxodComponent,
+    KasiComponent,
+    ListKasiComponent,
   ],
   imports: [
     BrowserModule,

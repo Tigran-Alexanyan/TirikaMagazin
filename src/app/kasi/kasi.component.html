@@ -1,0 +1,41 @@
+<!--<p>kasi works!</p>-->
+<app-header></app-header>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-2">
+      <app-menu></app-menu>
+    </div>
+    <div class="row">
+      <div style="margin-left: 6%; width: 20%">
+        <p>Расход Сумму</p>
+        <input type="text" style="padding: 5px" [(ngModel)]="k" placeholder="Search...">
+      </div>
+      <div class="col-12 " style="margin-left: 5%; height: 72vh; overflow-x: auto" id="scroll1">
+        <table class="table table-hover" >
+          <thead>
+          <tr>
+            <th scope="col" class="text">#</th>
+            <th scope="col" class="text">Дата</th>
+            <th scope="col" class="text">Transfer</th>
+            <th scope="col" class="text">user</th>
+            <th scope="col" class="text">incoming</th>
+            <th scope="col" class="text">outcoming</th>
+            <th scope="col" class="text">description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let list of this.service.transferList | filter:k">
+            <td class="text">{{list.id}}</td>
+            <td class="text">{{list.date}}</td>
+            <td class="text"><button class="btn btn-success" routerLink="/listKasi" (click)="takeMe(list.id, list.user.name, list.incoming, list.outcoming)">transfer</button></td>
+            <td class="text">{{list.user.name}}</td>
+            <td class="text">{{list.incoming}}</td>
+            <td class="text">{{list.outcoming}}</td>
+            <td class="text">{{this.service.d}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

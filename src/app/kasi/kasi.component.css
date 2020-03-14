@@ -1,0 +1,29 @@
+.row{
+  width: 85%;
+}
+
+.table{
+  width: 100%;
+}
+td{
+  width:  1%;
+}
+
+#scroll1::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  background-color: #F5F5F5;
+}
+
+#scroll1::-webkit-scrollbar
+{
+  width: 8px;
+  background-color: #F5F5F5;
+}
+
+#scroll1::-webkit-scrollbar-thumb
+{
+  border-radius: 3px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  background-color: darkgray;
+}

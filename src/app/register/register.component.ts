@@ -19,8 +19,8 @@ export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
   loading = false;
   submitted = false;
-  public login;
-  public password;
+  // public login;
+  // public password;
   public errors;
 
 
@@ -35,7 +35,7 @@ export class RegisterComponent implements OnInit {
     }
   }
    checkboxes: Role[];
-   user: User;
+   user: User[];
 
   public role: number [] = [];
 
@@ -68,7 +68,7 @@ export class RegisterComponent implements OnInit {
       return;
     }
 
-    if (this.login !== this.password ) {
+    if (this.registerForm.get('login').value !== this.registerForm.get('password').value) {
       this.errors = 'Incorrect Login or Password';
     }
 
@@ -79,7 +79,7 @@ export class RegisterComponent implements OnInit {
        surname : this.registerForm.get('surname').value,
        login : this.registerForm.get('login').value,
        password : this.registerForm.get('password').value,
-       rolesId : this.role,
+       roleId : this.role,
     });
 
 
