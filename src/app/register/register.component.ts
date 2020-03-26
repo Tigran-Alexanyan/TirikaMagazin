@@ -55,13 +55,14 @@ export class RegisterComponent implements OnInit {
         surname: ['', Validators.required],
         login: ['', Validators.required],
         password: ['', Validators.required],
+        password1: ['', Validators.required],
       });
 
   }
 
   get f() { return this.registerForm.controls; }
 
-  onSubmit() {
+  register() {
 
     this.submitted = true;
     if (this.registerForm.invalid) {
@@ -79,7 +80,8 @@ export class RegisterComponent implements OnInit {
        surname : this.registerForm.get('surname').value,
        login : this.registerForm.get('login').value,
        password : this.registerForm.get('password').value,
-       roleId : this.role,
+       rePassword : this.registerForm.get('password1').value,
+       rolesId : this.role,
     });
 
 

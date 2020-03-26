@@ -1,63 +1,128 @@
 <!--<p>menu works!</p>-->
-  <div class="wrapper" >
-    <nav id="sidebar" >
-      <ul class="list-unstyled-components">
-        <li class="active">
-          <i class="fa fa-cube"></i><a class="icon">Товары</a>
-          <ul class="list-unstyled" >
-            <hr class="divider">
-            <li>
-              <a routerLink="/продажа" routerLinkActive="actives">Продажа</a>
-              <hr class="divider">
-            </li>
-            <li>
-              <a routerLink="/продажи" routerLinkActive="actives">Продажи(список)</a>
-              <hr class="divider">
-            </li>
-            <li>
-              <a routerLink="/закупки" routerLinkActive="actives">Закупки</a>
-            </li>
-          </ul>
-          <hr class="divider">
-        </li>
-        <li class="active">
-          <i class="fa fa-briefcase"></i> <a class="icon">Финансы</a>
-          <ul class="list-unstyled" >
-            <hr class="divider">
-            <li>
-              <a routerLink="/приход" routerLinkActive="actives">Приход</a>
-              <hr class="divider">
-            </li>
-            <li>
-              <a routerLink="/расход" routerLinkActive="actives">Расход</a>
-              <hr class="divider">
-            </li>
-            <li>
-              <a routerLink="/kasi" routerLinkActive="actives">kasi</a>
-              <hr class="divider">
-            </li>
+<!--  <div class="wrapper">-->
+<!--    <nav id="sidebar" >-->
+<!--      <ul class="list-unstyled-components">-->
+<!--        <li class="active">-->
+<!--          <i class="fa fa-cubes"></i><a class="icon">Товары</a>-->
+<!--          <ul class="list-unstyled" >-->
+<!--            <hr class="divider">-->
+<!--            <li>-->
+<!--              <a routerLink="/продажа" routerLinkActive="actives">Продажа</a>-->
+<!--              <hr class="divider">-->
+<!--            </li>-->
+<!--            <li>-->
+<!--              <a routerLink="/продажи" routerLinkActive="actives">Продажи(список)</a>-->
+<!--              <hr class="divider">-->
+<!--            </li>-->
+<!--            <li>-->
+<!--              <a routerLink="/закупки" routerLinkActive="actives">Закупки</a>-->
+<!--            </li>-->
+<!--          </ul>-->
+<!--          <hr class="divider">-->
+<!--        </li>-->
+<!--        <li class="active">-->
+<!--          <i class="fa fa-briefcase"></i> <a class="icon">Финансы</a>-->
+<!--          <ul class="list-unstyled" >-->
+<!--            <hr class="divider">-->
+<!--            <li>-->
+<!--              <a routerLink="/приход" routerLinkActive="actives">Приход</a>-->
+<!--              <hr class="divider">-->
+<!--            </li>-->
+<!--            <li>-->
+<!--              <a routerLink="/расход" routerLinkActive="actives">Расход</a>-->
+<!--              <hr class="divider">-->
+<!--            </li>-->
+<!--            <li>-->
+<!--              <a routerLink="/kasi" routerLinkActive="actives">Касса</a>-->
+<!--              <hr class="divider">-->
+<!--            </li>-->
+<!--          </ul>-->
+<!--        </li>-->
+<!--        <li class="active">-->
+<!--          <i class="fa fa-leanpub" aria-hidden="true"></i><a class="icon">Справочники</a>-->
+<!--          <ul class="list-unstyled" >-->
+<!--            <hr class="divider">-->
+<!--            <li>-->
+<!--              <a routerLink="/grupi" routerLinkActive="actives">Группы</a>-->
+<!--              <hr class="divider">-->
+<!--            </li>-->
+<!--            <li>-->
+<!--              <a routerLink="/grupiTovari" routerLinkActive="actives">Группы товары</a>-->
+<!--              <hr class="divider">-->
+<!--            </li>-->
+<!--            <li>-->
+<!--              <a routerLink="">Поставщики</a>-->
+<!--            </li>-->
+<!--          </ul>-->
+<!--          <hr class="divider">-->
+<!--        </li>-->
+<!--      </ul>-->
+<!--    </nav>-->
+<!--  </div>-->
 
-          </ul>
-        </li>
-        <li class="active">
-          <a class="icon">Справочники</a>
-          <ul class="list-unstyled" >
-            <hr class="divider">
-            <li>
-              <a routerLink="">Группы</a>
-              <hr class="divider">
-            </li>
-            <li>
-              <a routerLink="">Группы товары</a>
-              <hr class="divider">
-            </li>
-            <li>
-              <a routerLink="">Поставщики</a>
-            </li>
-          </ul>
-          <hr class="divider">
-        </li>
-      </ul>
-    </nav>
-  </div>
+<mat-accordion hideToggle>
+  <mat-expansion-panel [expanded]="isActive" style="border-radius: 0">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <i class="fa fa-cubes"></i><a class="icon" style="padding: 7px;color: #EDB749">Товары</a>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <li style="padding-left: 26px">
+      <a routerLink="/продажа" routerLinkActive="actives">Продажа</a>
+      <hr class="divider" >
+    </li>
+    <li style="padding-left: 26px">
+      <a routerLink="/продажи" routerLinkActive="actives">Продажи(список)</a>
+      <hr class="divider">
+    </li>
+    <li style="padding-left: 26px">
+      <a routerLink="/закупки" routerLinkActive="actives">Закупки</a>
+      <hr class="divider">
+    </li>
+  </mat-expansion-panel>
+</mat-accordion>
 
+
+<mat-accordion hideToggle>
+  <mat-expansion-panel [expanded]="isActive" style="border-radius: 0">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <i class="fa fa-briefcase"></i><a class="icon" style="padding: 10px;color: #EDB749">Финансы</a>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <li style="padding-left: 26px">
+      <a routerLink="/приход" routerLinkActive="actives">Приход</a>
+      <hr class="divider">
+    </li>
+    <li style="padding-left: 26px">
+      <a routerLink="/расход" routerLinkActive="actives">Расход</a>
+      <hr class="divider">
+    </li>
+    <li style="padding-left: 26px">
+      <a routerLink="/kasi" routerLinkActive="actives">Касса</a>
+      <hr class="divider">
+    </li>
+  </mat-expansion-panel>
+</mat-accordion>
+
+<mat-accordion hideToggle>
+  <mat-expansion-panel [expanded]="isActive" style="border-radius: 0">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <i class="fa fa-leanpub"></i><a class="icon" style="padding: 10px;color: #EDB749">Справочники</a>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <li style="padding-left: 26px">
+      <a routerLink="/grupi" routerLinkActive="actives">Группы</a>
+      <hr class="divider">
+    </li>
+    <li style="padding-left: 26px">
+      <a routerLink="/grupiTovari" routerLinkActive="actives">Группы товары</a>
+      <hr class="divider">
+    </li>
+    <li style="padding-left: 26px">
+      <a routerLink="/postavchik" routerLinkActive="actives">Поставщики</a>
+      <hr class="divider">
+    </li>
+  </mat-expansion-panel>
+</mat-accordion>

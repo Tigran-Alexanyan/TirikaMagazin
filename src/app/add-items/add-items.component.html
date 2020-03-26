@@ -1,0 +1,52 @@
+<!--<p>add-items works!</p>-->
+<app-header></app-header>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-2" style="padding-left: 0">
+      <app-menu></app-menu>
+    </div>
+    <div style="width: 83%">
+      <div style="width: 876px;display: flex">
+        <div style="margin-top: 40px">
+          <button class="btn btn-primary" routerLink="/grupiTovari">return</button>
+        </div>
+      </div><br>
+      <div style="width: 80%;height: 72vh;display: flex">
+        <div style="width: 100%;margin-top: 5px">
+          <form [formGroup]="registerForm">
+            <div class="form-group">
+              <div style="padding-top: 10px;width: 200px">name</div><input type="text" class="input" name="name" formControlName="name" placeholder="Name"/>
+            </div>
+            <div class="form-group">
+              <div style="padding-top: 10px;width: 200px">description</div><input type="text" class="input" name="description" formControlName="description" placeholder="Description..."/>
+            </div>
+            <div class="form-group">
+              <div style="padding-top: 10px;width: 200px">count</div><input type="number" class="input" name="count" formControlName="count" placeholder="Count"/>
+            </div>
+            <div class="form-group">
+              <div style="padding-top: 10px;width: 200px">minCount</div><input type="number" class="input" name="minCount" formControlName="minCount" placeholder="minCount"/>
+            </div>
+            <div class="form-group">
+              <div style="padding-top: 10px;width: 200px">barcode</div><input type="text" class="input" name="barcode" formControlName="barcode" placeholder="Barcode"/>
+            </div>
+            <div class="form-group">
+              <div style="padding-top: 10px;width: 200px">categoryId</div><input type="number" class="input" name="category" formControlName="category" placeholder="CategoryId number"/>
+            </div>
+            <div class="form-group">
+              <div style="padding-top: 10px;width: 200px">priceIn</div><input type="number" class="input" name="priceIn" formControlName="priceIn" placeholder="priceIn"/>
+            </div>
+            <div class="form-group">
+              <div style="padding-top: 10px;width: 200px">priceOut</div><input type="number" class="input" name="priceOut" formControlName="priceOut" placeholder="priceOut"/>
+            </div>
+            <div class="form-group" style="float: right">
+              <button type="button" (click)="clickMe()"  class="btn btn-primary">
+                добавить категори
+              </button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

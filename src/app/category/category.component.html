@@ -12,7 +12,7 @@
         </thead>
         <tbody>
         <tr *ngFor="let category of categories" (click)="catName(category , category.id)" [class.active]="category === selectedCategory">
-          <th scope="row" class="text text-center"><a >{{category.id}}</a></th>
+          <th scope="row" class="text text-center"><a>{{category.id}}</a></th>
           <td class="text text-center">{{category.name}}</td>
           <td class="text text-center">{{category.description}}</td>
           <td class="text text-center">{{category.parentId}}</td>

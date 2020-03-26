@@ -1,9 +1,5 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {Category} from '../_models/category';
-import {Observable} from 'rxjs';
-import {Transfer} from '../_models/transfer';
-
 
 @Injectable({
   providedIn: 'root'
@@ -20,12 +16,13 @@ export class ServiceService {
   public itemsInCame;
   public priceOut;
   public transferList;
-  public d: string;
+  public grypiTovariList;
+  public groupList;
+ // public d: string;
   constructor(private http: HttpClient) {
    // console.log(this.transferList);
     // console.log(this.itemsInCame);
     // console.log(this.findByCategoryArr);
-    // console.log(this.sendMinus.);
   }
 
   sendMinus(body: { outComing: number; description: string; sectionId: any }) {
@@ -36,4 +33,5 @@ export class ServiceService {
         })
       });
   }
+
 }

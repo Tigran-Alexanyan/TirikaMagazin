@@ -2,7 +2,7 @@
 <app-header></app-header>
 <div class="container-fluid">
   <div class="row">
-    <div class="col-2">
+    <div class="col-2" style="padding-left: 0">
       <app-menu></app-menu>
     </div>
     <div class="col-5">
@@ -16,13 +16,61 @@
             <div *ngFor="let item of items" [class.active]="item === selectedItem">
               <tr (click)="removeItem(item)">
                 <td class="text text-left">{{item.title}}</td>
-                <td class="text text-center">{{item.count}}</td>
-                <td class="text text-center">{{item.priceOut}}</td>
-                <td class="text text-center" style="width: 7%"><button class="btn btn-danger" style="padding: 1px;height: 15px;width: 25px" (click)="countDecrement(item)"></button></td>
+                <td class="text text-center">
+<!--                  <input type="text" class="input1"  [(ngModel)]="item.count" value="{{item.count}}" placeholder="count">-->
+                  {{item.count}}
+                </td>
+                <td class="text text-center">
+<!--                  <input type="text" class="input1" [(ngModel)]="item.priceOut" value="{{item.priceOut}}" placeholder="priceOut">-->
+                  {{item.priceOut}}
+                </td>
+                <td class="text text-center" style="width: 7%">
+<!--                  <input type="text" class="input1" [(ngModel)]="item.priceIn" value="{{item.priceIn}}" placeholder="priceIn">-->
+                  <button class="btn btn-danger" style="padding: 1px;height: 15px;width: 25px" (click)="countDecrement(item)"></button></td>
                 <td class="text text-center" style="width: 7%"><span>{{item.count}}</span></td>
-                <td class="text text-center" style="width: 7%"><button class="btn btn-success" style="padding: 1px;height: 15px;width: 25px" (click)="countIncrement(item)"></button></td>
+                <td class="text text-center" style="width: 7%">
+                  <button class="btn btn-success" style="padding: 1px;height: 15px;width: 25px" (click)="countIncrement(item)"></button>
+                </td>
               </tr>
             </div>
+
+
+
+
+
+<!--            <thead>-->
+<!--            <tr>-->
+<!--              <th scope="col" class="text text-center">Id</th>-->
+<!--              <th scope="col" class="text text-center">Title</th>-->
+<!--              <th scope="col" class="text text-center">Count</th>-->
+<!--              <th scope="col" class="text text-center">PriceOut</th>-->
+<!--              <th scope="col" class="text text-center">PriceIn</th>-->
+<!--            </tr>-->
+<!--            </thead>-->
+<!--            <tbody *ngFor="let item of this.service.itemsInCame | filter: title" (click)="itemName(item)" [class.active]="item === selectedItem">-->
+<!--            <tr>-->
+<!--              <td class="text text-center">{{item.id}}</td>-->
+<!--              <td class="text text-center">{{item.title}}</td>-->
+<!--              <td class="text text-center">-->
+<!--                {{item.count}}-->
+<!--                                  <input type="text" class="input" [(ngModel)]="item.count" value="{{item.count}}" placeholder="count">-->
+<!--              </td>-->
+<!--              <td class="text text-center">-->
+<!--                {{item.priceOut}}-->
+<!--                                  <input type="text" class="input" [(ngModel)]="item.priceOut" value="{{item.priceOut}}" placeholder="priceOut">-->
+<!--              </td>-->
+<!--              <td class="text text-center">-->
+<!--                {{item.priceIn}}-->
+<!--                                  <input type="text" class="input" [(ngModel)]="item.priceIn" value="{{item.priceIn}}" placeholder="priceIn">-->
+<!--              </td>-->
+<!--            </tr>-->
+<!--            </tbody>-->
+
+
+
+
+
+
           </div>
         </div>
       </div>
@@ -45,7 +93,7 @@
         </div>
         <div class="row r">
           <div class="col-12 border border-secondary">
-            <button mat-stroked-button color="primary" class="btn2" (click)="prodat()"><h3 class="text-center">Прoдать</h3></button>
+            <button mat-stroked-button color="primary" class="btn2" (click)="prodat()"><h3 class="text-center">Kupit</h3></button>
           </div>
         </div>
       </div>

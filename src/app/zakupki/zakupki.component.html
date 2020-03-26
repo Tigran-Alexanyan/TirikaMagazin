@@ -2,52 +2,80 @@
 <app-header></app-header>
 <div class="container-fluid">
   <div class="row">
-    <div class="col-2">
+    <div class="col-2" style="padding-left: 0">
       <app-menu></app-menu>
     </div>
-    <div class="row">
-      <div style="margin-left: 5%; width: 20%">
-        <mat-form-field>
-          <mat-label>Start Date</mat-label>
-          <input matInput [matDatepicker]="p"
-                 (dateInput)="addEventOne('input', $event)" (dateChange)="addEventOne('change', $event)">
-          <mat-datepicker-toggle matSuffix [for]="p" ></mat-datepicker-toggle>
-          <mat-datepicker #p></mat-datepicker>
-        </mat-form-field>
+    <div style="width: 83%">
+      <div style="width: 876px;display: flex">
+        <div style="width: 20%">
+          <mat-form-field>
+            <mat-label>Start Date</mat-label>
+            <input matInput [matDatepicker]="p"
+                   (dateInput)="addEventOne('input', $event)" (dateChange)="addEventOne('change', $event)">
+            <mat-datepicker-toggle matSuffix [for]="p" ></mat-datepicker-toggle>
+            <mat-datepicker #p></mat-datepicker>
+          </mat-form-field>
+        </div>
+        <div style="margin-left: 7%">
+          <mat-form-field>
+            <mat-label>End Date</mat-label>
+            <input matInput [matDatepicker]="picker"
+                   (dateInput)="addEventTwo('input', $event)" (dateChange)="addEventTwo('change', $event)">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </div>
+        <div style="margin-left: 5%;margin-top: 12px">
+          <button class="btn btn-info" routerLink="/optionorder">Купит</button>
+        </div>
       </div>
-      <div style="margin-left: 7%">
-        <mat-form-field>
-          <mat-label>End Date</mat-label>
-          <input matInput [matDatepicker]="picker"
-                 (dateInput)="addEventTwo('input', $event)" (dateChange)="addEventTwo('change', $event)">
-          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-          <mat-datepicker #picker></mat-datepicker>
-        </mat-form-field>
-      </div>
-      <div style="margin-left: 5%;margin-top: 8px">
-        <button class="btn btn-primary" routerLink="/optionorder">Купит</button>
-      </div>
-      <div class="col-12" style="margin-left: 5%; height: 72vh; overflow-x: auto" id="scroll1">
-          <table class="table table-hover">
-            <thead>
-            <tr>
-              <th scope="col" class="text">Id</th>
-              <th scope="col" class="text">Date</th>
-              <th scope="col" class="text">Items</th>
-              <th scope="col" class="text">PriceOut</th>
-              <th scope="col" class="text">People</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr *ngFor="let list of this.purchaseItemsList">
-              <td class="text">{{list.id}}</td>
-              <td class="text">{{list.date}}</td>
-              <td class="text"><a *ngFor="let t of list.itemMainDtos">{{t.count}}[{{t.title}}]</a></td>
-              <td class="text">{{list.orderSum}}</td>
-              <td class="text">{{list.userDto.name}}</td>
-            </tr>
-            </tbody>
-          </table>
+
+
+
+
+
+
+      <div style="height: 77vh; overflow-x: auto;width: 100%" id="scroll1">
+<!--          <table class="table table-hover">-->
+<!--            <thead>-->
+<!--            <tr>-->
+<!--              <th scope="col" class="text">Id</th>-->
+<!--              <th scope="col" class="text">Date</th>-->
+<!--              <th scope="col" class="text">Items</th>-->
+<!--              <th scope="col" class="text">PriceOut</th>-->
+<!--              <th scope="col" class="text">People</th>-->
+<!--            </tr>-->
+<!--            </thead>-->
+<!--            <tbody>-->
+<!--            <tr *ngFor="let list of this.purchaseItemsList">-->
+<!--              <td class="text">{{list.id}}</td>-->
+<!--              <td class="text">{{list.date}}</td>-->
+<!--              <td class="text"><a *ngFor="let t of list.itemMainDtos">{{t.count}}[{{t.title}}]</a></td>-->
+<!--              <td class="text">{{list.orderSum}}</td>-->
+<!--              <td class="text">{{list.userDto.name}}</td>-->
+<!--            </tr>-->
+<!--            </tbody>-->
+<!--          </table>-->
+
+
+        <table class="table_dark">
+          <tr>
+          <th>Id</th>
+          <th>Date</th>
+          <th>Items</th>
+          <th>PriceOut</th>
+          <th>People</th>
+          </tr>
+          <tr *ngFor="let list of this.purchaseItemsList">
+            <td class="text">{{list.id}}</td>
+            <td class="text">{{list.date}}</td>
+            <td class="text"><a *ngFor="let t of list.itemMainDtos">{{t.count}}[{{t.title}}]</a></td>
+            <td class="text">{{list.orderSum}}</td>
+            <td class="text">{{list.userDto.name}}</td>
+          </tr>
+        </table>
+
+
       </div>
     </div>
 

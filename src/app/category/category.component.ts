@@ -24,6 +24,7 @@ export class CategoryComponent implements OnInit {
           }
     }).subscribe((data: Category) => {
       this.categories = data;
+      console.log(this.categories);
     });
   }
 
@@ -34,10 +35,16 @@ export class CategoryComponent implements OnInit {
     this.service.currentCat = category;
     // @ts-ignore
     this.selectedCategory = category;
-    this.http.get<any>(`http://localhost:8081/rest/items/findByCategory/${id}`).subscribe((data) => {
+    this.http.get<any>(`http://localhost:8081/rest/items/findByCategory/${id}`, {
+     headers: {
+       'content-type': 'application/json',
+      Authorization : `Bearer ${localStorage.getItem('token')}`
+    }
+  }).subscribe((data) => {
         this.service.findByCategoryNumber = id;
        // console.log(this.service.findByCategory);
         this.service.findByCategoryArr = data;
+        console.log(this.service.findByCategoryArr);
     });
   }
 

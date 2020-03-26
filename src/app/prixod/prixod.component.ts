@@ -51,7 +51,7 @@ export class PrixodComponent implements OnInit {
       // if (day < 9) {
       //   day =   day;
       // }
-      location.href = '/prixod';
+      location.href = '/приход';
       const date = year + '-' + month + '-' + day + 'T' + h + ':' + m + ':' + s;
       console.log(date);
       this.inComingCashItemsList.push({

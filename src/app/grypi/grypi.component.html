@@ -1,0 +1,76 @@
+<!--<p>grypi works!</p>-->
+<app-header></app-header>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-2" style="padding-left: 0">
+      <app-menu></app-menu>
+    </div>
+    <div class="row" style="width: 84%">
+      <div class="col-12" style="margin-left: 5%; height: 72vh;display: flex">
+
+
+<!--        <div *ngFor="let group of groupList">-->
+<!--          <div *ngIf="group.parentId === group.id">-->
+<!--              <p> vernagir + {{group.name}}</p>-->
+<!--          </div>-->
+<!--          <div *ngFor="let g of groupList">-->
+<!--            <div *ngIf="g.parentId === group.id">-->
+<!--            <div *ngIf="g.parentId !== g.id">-->
+<!--              <p>{{g.name}}</p>-->
+<!--            </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+
+        <div id="scroll1" style="width: 65%; height: 72vh; margin-top: 20px">
+          <mat-accordion style="margin-top: 20px; width: 50%">
+            <mat-expansion-panel *ngFor="let group of groupList">
+              <mat-expansion-panel-header *ngIf="group.parentId === group.id">
+                {{group.name}}
+              </mat-expansion-panel-header>
+              <div *ngFor="let g of groupList">
+                <div *ngIf="g.parentId === group.id">
+                  <div *ngIf="g.parentId !== g.id">
+                    <p>{{g.name}}
+                      <span style="float: right; font-size: 20px" (click)="del(g.id)"><i class="fa fa-trash" ></i></span>
+                      <span style="margin-left: 10%">{{g.description}}</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </mat-expansion-panel>
+          </mat-accordion>
+        </div>
+
+
+        <div style="margin-top: 20px;margin-left: 2%">
+          <form [formGroup]="registerForm">
+            <div class="form-group">
+              <input type="text" class="input" name="name" formControlName="name" placeholder="Enter category name"/>
+            </div>
+            <br>
+            <div class="form-group">
+               <select class="input"  (change)="selectId($event.target.value)" (click)="selectId($event.target.value)">
+                 <option class="input" value="0" selected>Select Category</option>
+                  <option  *ngFor="let g of nameList" [value]="g.parentId">
+                        {{g.name}}
+                  </option>
+                </select>
+            </div>
+            <br>
+            <div class="form-group">
+              <textarea type="text" class="input"  name="description"  formControlName="description" placeholder="Description..."></textarea>
+            </div>
+            <br>
+            <div class="form-group">
+              <button type="button" (click)="clickMe()"  class="btn btn-primary btn-block">
+                добавить категори
+              </button>
+            </div>
+          </form>
+        </div>
+
+    </div>
+  </div>
+</div>
+</div>

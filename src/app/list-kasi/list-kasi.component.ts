@@ -10,22 +10,19 @@ export class ListKasiComponent implements OnInit {
   constructor(private service: ServiceService) {}
 
   public salary: number;
-  d: string;
+  description: string;
 
   sendMinus() {
     this.service.sendMinus({
       sectionId: this.service.transferList.id,
       outComing: this.salary,
-      description: this.d,
+      description: this.description,
     }).subscribe(body => {
          console.log(body);
     });
-    console.log(this.service.d = this.d);
   }
 
-
   ngOnInit() {
-
   }
 
 }

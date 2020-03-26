@@ -26,12 +26,20 @@ import { MatNativeDateModule } from '@angular/material';
 import {MatInputModule} from '@angular/material/input';
 import { ZakupkiComponent } from './zakupki/zakupki.component';
 import { OptionOrderComponent } from './option-order/option-order.component';
-import {MatButtonModule} from "@angular/material/button";
+import {MatButtonModule} from '@angular/material/button';
 import { ItemsIncameComponent } from './items-incame/items-incame.component';
 import { PrixodComponent } from './prixod/prixod.component';
 import { RasxodComponent } from './rasxod/rasxod.component';
 import { KasiComponent } from './kasi/kasi.component';
 import { ListKasiComponent } from './list-kasi/list-kasi.component';
+import { GrypiComponent } from './grypi/grypi.component';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatListModule} from '@angular/material/list';
+import {MatSelectModule} from '@angular/material/select';
+import { GrypiTovariComponent } from './grypi-tovari/grypi-tovari.component';
+import { AddItemsComponent } from './add-items/add-items.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import { ChangeItemsComponent } from './change-items/change-items.component';
 
 
 @NgModule({
@@ -54,6 +62,10 @@ import { ListKasiComponent } from './list-kasi/list-kasi.component';
     RasxodComponent,
     KasiComponent,
     ListKasiComponent,
+    GrypiComponent,
+    GrypiTovariComponent,
+    AddItemsComponent,
+    ChangeItemsComponent,
   ],
   imports: [
     BrowserModule,
@@ -69,8 +81,13 @@ import { ListKasiComponent } from './list-kasi/list-kasi.component';
     MatNativeDateModule,
     MatInputModule,
     MatButtonModule,
+    MatExpansionModule,
+    MatListModule,
+    MatSelectModule,
+    MatSidenavModule,
+    MatSidenavModule,
   ],
-  providers: [ServiceService, ItemsListComponent, OrderListComponent, MatDatepickerModule],
+  providers: [ServiceService, ItemsListComponent, OrderListComponent, MatDatepickerModule, MatExpansionModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

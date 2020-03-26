@@ -1,0 +1,47 @@
+<!--<p>grypi-tovari works!</p>-->
+<app-header></app-header>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-2" style="padding-left: 0">
+      <app-menu></app-menu>
+    </div>
+    <div style="width: 83%">
+      <div style="width: 876px">
+        <div style="margin-top: 40px">
+          <button class="btn btn-info" routerLink="/addItems">Добавить</button>
+        </div>
+      </div><br>
+      <div style="height: 77vh; overflow-x: auto;width: 100%" id="scroll1">
+        <table class="table_dark">
+          <tr>
+            <th>#</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>count</th>
+            <th>minCount</th>
+            <th>Barcode</th>
+            <th>Category</th>
+            <th>PriceIn</th>
+            <th>PriceOut</th>
+            <th>Delete</th>
+            <th>Change</th>
+          </tr>
+          <tr *ngFor="let list of this.service.grypiTovariList">
+            <td class="text" >{{list.id}}</td>
+            <td class="text">{{list.title}}</td>
+            <td class="text">{{list.description}}</td>
+            <td class="text">{{list.count}}</td>
+            <td class="text">{{list.minCount}}</td>
+            <td class="text">{{list.barcode}}</td>
+            <td class="text">{{list.category.name}}</td>
+            <td class="text">{{list.priceIn}}</td>
+            <td class="text">{{list.priceOut}}</td>
+            <td class="text"><button class="btn btn-outline-danger" (click)="deleteItems(list.id)">Delete</button></td>
+            <td class="text"><button class="btn btn-outline-warning" routerLink="/changeItems"
+                                             (click)="changeItems(list.id, list.title, list.description, list.count, list.minCount, list.barcode, list.category.id, list.priceIn, list.priceOut)">Change</button></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

@@ -16,12 +16,22 @@
               <tr>
                 <td class="text text-center">{{item.id}}</td>
                 <td class="text text-center">{{item.title}}</td>
-                <td class="text text-center"><input type="text" class="input" [(ngModel)]="item.count" value="{{item.count}}"  placeholder="count"></td>
-                <td class="text text-center"><input type="text" class="input" [(ngModel)]="item.priceOut" value="{{item.priceOut}}" placeholder="priceOut"></td>
-                <td class="text text-center"><input type="text" class="input" [(ngModel)]="item.priceIn" value="{{item.priceIn}}" placeholder="priceIn"></td>
+                <td class="text text-center">
+<!--                  {{item.count}}-->
+                  <input type="text" class="input" [(ngModel)]="item.count" value="{{item.count}}" placeholder="count">
+                </td>
+                <td class="text text-center">
+<!--                  {{item.priceOut}}-->
+                  <input type="text" class="input" [(ngModel)]="item.priceOut" value="{{item.priceOut}}" placeholder="priceOut">
+                </td>
+                <td class="text text-center">
+<!--                  {{item.priceIn}}-->
+                  <input type="text" class="input" [(ngModel)]="item.priceIn" value="{{item.priceIn}}" placeholder="priceIn">
+                </td>
               </tr>
               </tbody>
             </table>
+<!---->
           </div>
           <br>
           <div class="">
@@ -29,3 +39,7 @@
           </div>
         </div>
       </div>
+
+
+
+<!--<app-items-list></app-items-list>-->

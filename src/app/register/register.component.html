@@ -3,7 +3,7 @@
   <div class="container d-flex">
     <div class="login-form col-md-4">
       <h1 class="title">register here</h1><br>
-      <form [formGroup]="registerForm" (click)="onSubmit()">
+      <form [formGroup]="registerForm">
         <div class="form-group">
           <input type="text" class="input"  name="name" formControlName="name" placeholder="Name"/>
           <div class="" style="color: red" *ngIf="registerForm.controls['name'].invalid && registerForm.controls['name'].touched">
@@ -18,7 +18,6 @@
           </div>
         </div>
         <br>
-
         <div class="form-group">
           <input type="text" class="input"  name="login" formControlName="login" placeholder="Login"/>
           <div class="" style="color: red" *ngIf="registerForm.controls['login'].invalid && registerForm.controls['login'].touched" >
@@ -34,21 +33,37 @@
         </div>
         <br>
         <div class="form-group">
+          <input  type="password" class="input" name="password1" formControlName="password1" placeholder="rePassword"/>
+          <div class="" style="color: red" *ngIf="registerForm.controls['password1'].invalid && registerForm.controls['password1'].touched">
+            Enter your rePassword
+          </div>
+        </div>
+        <br>
+        <div class="form-group">
           <p class="text text-center text-danger">{{errors}}</p>
-          <button type="button" routerLink="/login" [disabled]="registerForm.invalid"  class="btn btn-primary btn-block">
+          <button type="button" (click)="register()" [disabled]="registerForm.invalid"  class="btn btn-primary btn-block">
             Submit
           </button><br>
-          <a routerLink="/login">? login</a>
+          <a routerLink="/login">login</a>
         </div>
       </form>
 
     </div>
-    <div class="checkBox">
-        <div *ngFor="let check of checkboxes" style="display: flex">
-          <div><mat-checkbox (click)="getId(this.check.id)">{{check.name}}</mat-checkbox></div>
-        </div>
+    <div class="checkBox" id="scroll1" style="overflow-x: scroll">
+          <table>
+            <tr *ngFor="let check of checkboxes" >
+              <td style="padding: 5px"><mat-checkbox (click)="getId(this.check.id)">{{check.name}}</mat-checkbox></td>
+              <td style="padding: 5px"><mat-checkbox (click)="getId(this.check.id)">{{check.name}}</mat-checkbox></td>
+              <td style="padding: 5px"><mat-checkbox (click)="getId(this.check.id)">{{check.name}}</mat-checkbox></td>
+              <td style="padding: 5px"><mat-checkbox (click)="getId(this.check.id)">{{check.name}}</mat-checkbox></td>
+            </tr>
+          </table>
   </div>
   </div>
+
+
+
+
 
 </div>
 

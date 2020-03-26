@@ -14,7 +14,18 @@ import {InCame} from '../_models/InCame';
   styleUrls: ['./option-order.component.css']
 })
 export class OptionOrderComponent implements OnInit {
-  constructor(private router: Router, public service: ServiceService, private http: HttpClient) {}
+  constructor(private router: Router, public service: ServiceService, private http: HttpClient) {
+    http.get<InCame[]>(this.url, {
+      headers: {
+        'content-type': 'application/json',
+        Authorization: `Bearer ${localStorage.getItem('token')}`
+      }
+    }).subscribe((data) => {
+      this.service.itemsInCame = data;
+    //  console.log(this.itemsInCame);
+    });
+  }
+   url = 'http://localhost:8081/rest/items/itemsForInCame';
 
   private removeElement: InCame;
 
@@ -30,6 +41,8 @@ export class OptionOrderComponent implements OnInit {
 
   selectedItem: InCame;
 
+ // selectedItem = InCame;
+
   add() {
     if (!this.service.itemsInCame) {
       return;
@@ -44,6 +57,7 @@ export class OptionOrderComponent implements OnInit {
       item.id = this.service.itemsInCame.id;
       item.title = this.service.itemsInCame.title;
       item.priceOut = this.service.itemsInCame.priceOut;
+      item.priceIn = this.service.itemsInCame.priceIn;
       item.count = 1;
       this.items.push(item);
     }
@@ -85,6 +99,13 @@ export class OptionOrderComponent implements OnInit {
     this.items = [];
     this.sum1();
   }
+
+  itemName(item: InCame) {
+   // this.service.itemsInCame = item;
+    // @ts-ignore
+    this.selectedItem = item;
+  }
+
 
   prodat() {
     this.obj.push({

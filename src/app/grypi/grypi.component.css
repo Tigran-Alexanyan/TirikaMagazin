@@ -1,37 +1,3 @@
-
-.container{
-  margin-top: 60px;
-}
-
-.login-form{
-  /*margin-top: 60px;*/
-  box-shadow: 0 0 10px 1px grey;
-  border-radius: 5px;
-  border-bottom: 20px;
-  background: white;
-}
-
-.checkBox{
-  width: 100%;
-  height: 686px;
-  padding: 10px;
-  /*margin-top: 60px;*/
-  border-radius: 5px;
-  border-bottom: 20px;
-  background: white;
-  display: flex;
-}
-
-
-.title{
-  background: #007bbf;
-  padding: 10px;
-  text-align: center;
-  color: #fff;
-  border-radius: 0 0 10px 10px;
-
-
-}
 .input{
   width: 100%;
   padding: 10px;
@@ -51,16 +17,9 @@ input.ng-touched.ng-valid {border:solid green 2px;}
   outline: none;
 }
 
-.btn{
-  outline: none;
+.custom-select {
+  display: none;
 }
-
-a{
-  color: #747474;
-  text-decoration: none;
-  margin-left: 40%;
-}
-
 
 
 #scroll1::-webkit-scrollbar-track

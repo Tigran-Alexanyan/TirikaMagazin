@@ -25,9 +25,9 @@ export class KasiComponent implements OnInit {
     });
   }
 
-  public d: string;
-  public k: string;
- transferList: Transfer[];
+
+  public search: string;
+ // transferList: Transfer[];
 
   takeMe(id: number, name: string, incoming: number, outcoming: number) {
     this.service.transferList.id = id;

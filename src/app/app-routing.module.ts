@@ -13,8 +13,12 @@ import {ZakupkiComponent} from './zakupki/zakupki.component';
 import {OptionOrderComponent} from './option-order/option-order.component';
 import {PrixodComponent} from './prixod/prixod.component';
 import {RasxodComponent} from './rasxod/rasxod.component';
-import {KasiComponent} from "./kasi/kasi.component";
-import {ListKasiComponent} from "./list-kasi/list-kasi.component";
+import {KasiComponent} from './kasi/kasi.component';
+import {ListKasiComponent} from './list-kasi/list-kasi.component';
+import {GrypiComponent} from './grypi/grypi.component';
+import {GrypiTovariComponent} from './grypi-tovari/grypi-tovari.component';
+import {AddItemsComponent} from './add-items/add-items.component';
+import {ChangeItemsComponent} from './change-items/change-items.component';
 
 
 const routes: Routes = [
@@ -34,6 +38,10 @@ const routes: Routes = [
   { path: 'расход', component: RasxodComponent },
   { path: 'kasi', component: KasiComponent },
   { path: 'listKasi', component: ListKasiComponent },
+  { path: 'grupi', component: GrypiComponent },
+  { path: 'grupiTovari', component: GrypiTovariComponent },
+  { path: 'addItems', component: AddItemsComponent },
+  { path: 'changeItems', component: ChangeItemsComponent },
 ];
 
 @NgModule({
