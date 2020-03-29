@@ -11,6 +11,14 @@ import {AllItems} from '../_models/AllItems';
   styleUrls: ['./change-items.component.css']
 })
 export class ChangeItemsComponent implements OnInit {
+  public title: string = this.service.grypiTovariList.title;
+  public description: string = this.service.grypiTovariList.description;
+  public count: number = this.service.grypiTovariList.count;
+  public minCount: number = this.service.grypiTovariList.minCount;
+  public barcode: string = this.service.grypiTovariList.barcode;
+  public category: number = this.service.grypiTovariList.category;
+  public priceIn: number = this.service.grypiTovariList.priceIn;
+  public priceOut: number = this.service.grypiTovariList.priceOut;
   constructor(private router: Router, private http: HttpClient, private service: ServiceService, private formBuilder: FormBuilder) {}
 
 
@@ -45,7 +53,7 @@ export class ChangeItemsComponent implements OnInit {
     });
     console.log(body);
 
-    this.http.put('http://localhost:8081/rest/items',  body, {
+    this.http.post('http://localhost:8081/rest/items',  body, {
       headers: {
         'content-type': 'application/json',
         Authorization: `Bearer ${localStorage.getItem('token')}`

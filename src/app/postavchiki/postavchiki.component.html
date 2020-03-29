@@ -1,0 +1,41 @@
+<!--<p>postavchiki works!</p>-->
+<app-header></app-header>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-2" style="padding-left: 0">
+      <app-menu></app-menu>
+    </div>
+    <div style="width: 83%">
+      <div style="width: 876px">
+        <div style="margin-top: 40px">
+          <button class="btn btn-info" routerLink="/addPost">Добавить</button>
+        </div>
+      </div><br>
+      <div style="height: 77vh; overflow-x: auto;width: 100%" id="scroll1">
+        <table class="table_dark">
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Address</th>
+            <th>Date</th>
+            <th>Change</th>
+          </tr>
+          <tr *ngFor="let list of this.service.supplierList">
+            <td class="text">{{list.id}}</td>
+            <td class="text">{{list.name}}</td>
+            <td class="text">{{list.surname}}</td>
+            <td class="text">{{list.email}}</td>
+            <td class="text">{{list.phone}}</td>
+            <td class="text">{{list.address}}</td>
+            <td class="text">{{list.date}}</td>
+            <td class="text"><button class="btn btn-outline-warning" routerLink="/changePost"
+                                     (click)="changeItems(list.id, list.name, list.surname, list.email, list.phone, list.address, list.date)">Change</button></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

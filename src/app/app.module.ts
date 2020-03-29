@@ -40,6 +40,9 @@ import { GrypiTovariComponent } from './grypi-tovari/grypi-tovari.component';
 import { AddItemsComponent } from './add-items/add-items.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { ChangeItemsComponent } from './change-items/change-items.component';
+import { PostavchikiComponent } from './postavchiki/postavchiki.component';
+import { AddSupplierComponent } from './add-supplier/add-supplier.component';
+import { ChangeSupplierComponent } from './change-supplier/change-supplier.component';
 
 
 @NgModule({
@@ -66,6 +69,9 @@ import { ChangeItemsComponent } from './change-items/change-items.component';
     GrypiTovariComponent,
     AddItemsComponent,
     ChangeItemsComponent,
+    PostavchikiComponent,
+    AddSupplierComponent,
+    ChangeSupplierComponent,
   ],
   imports: [
     BrowserModule,

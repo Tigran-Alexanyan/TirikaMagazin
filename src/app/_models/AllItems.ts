@@ -4,7 +4,7 @@ export class AllItems {
   description: string;
   count: number;
   minCount: number;
-  barcode: number;
+  barcode: string;
   category: number;
   priceIn: number;
   priceOut: number;

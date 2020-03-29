@@ -17,6 +17,7 @@ export class ServiceService {
   public priceOut;
   public transferList;
   public grypiTovariList;
+  public supplierList;
   public groupList;
  // public d: string;
   constructor(private http: HttpClient) {
@@ -33,5 +34,17 @@ export class ServiceService {
         })
       });
   }
+
+   // clickMe(body: { id: number, name: string; surname: string; email: string, phone: number, address: string, date: string }) {
+   //    return this.http.post('http://localhost:8081/rest/supplier/change', JSON.stringify(body) , {
+   //      headers: new HttpHeaders({
+   //        'content-type': 'application/json',
+   //         Authorization: `Bearer ${localStorage.getItem('token')}`,
+   //      })
+   //    });
+  // }
+
+
+
 
 }

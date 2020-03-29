@@ -39,8 +39,8 @@ export class GrypiTovariComponent implements OnInit {
   }
 
   changeItems(id: number, title: string, description: string,
-              count: number, minCount: number, barcode: number,
-              category: object, priceIn: number, priceOut: number) {
+              count: number, minCount: number, barcode: string,
+              category: number, priceIn: number, priceOut: number) {
     this.service.grypiTovariList.id = id;
     this.service.grypiTovariList.title = title;
     this.service.grypiTovariList.description = description;

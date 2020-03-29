@@ -16,35 +16,35 @@
           <form [formGroup]="registerForm">
             <div class="form-group">
               <div style="padding-top: 10px;width: 200px">name</div>
-              <input type="text" class="input" name="title" value="{{this.service.grypiTovariList.title}}" formControlName="title" placeholder="Name"/>
+              <input type="text" class="input" name="title" [(ngModel)]="title" value="{{this.service.grypiTovariList.title}}" formControlName="title" placeholder="Name"/>
             </div>
             <div class="form-group">
               <div style="padding-top: 10px;width: 200px">description</div>
-              <input type="text" class="input" name="description" value="{{this.service.grypiTovariList.description}}" formControlName="description" placeholder="Description..."/>
+              <input type="text" class="input" name="description" [(ngModel)]="description" value="{{this.service.grypiTovariList.description}}" formControlName="description" placeholder="Description..."/>
             </div>
             <div class="form-group">
               <div style="padding-top: 10px;width: 200px">count</div>
-              <input type="number" class="input" name="count" value="{{this.service.grypiTovariList.count}}" formControlName="count" placeholder="Count"/>
+              <input type="number" class="input" name="count" [(ngModel)]="count" value="{{this.service.grypiTovariList.count}}" formControlName="count" placeholder="Count"/>
             </div>
             <div class="form-group">
               <div style="padding-top: 10px;width: 200px">minCount</div>
-              <input type="number" class="input" name="minCount" value="{{this.service.grypiTovariList.minCount}}" formControlName="minCount" placeholder="minCount"/>
+              <input type="number" class="input" name="minCount" [(ngModel)]="minCount" value="{{this.service.grypiTovariList.minCount}}" formControlName="minCount" placeholder="minCount"/>
             </div>
             <div class="form-group">
               <div style="padding-top: 10px;width: 200px">barcode</div>
-              <input type="text" class="input" name="barcode" value="{{this.service.grypiTovariList.barcode}}" formControlName="barcode" placeholder="Barcode"/>
+              <input type="text" class="input" name="barcode" [(ngModel)]="barcode" value="{{this.service.grypiTovariList.barcode}}" formControlName="barcode" placeholder="Barcode"/>
             </div>
             <div class="form-group">
               <div style="padding-top: 10px;width: 200px">category</div>
-              <input type="number" class="input" name="category" value="{{this.service.grypiTovariList.category}}" formControlName="category" placeholder="Category"/>
+              <input type="number" class="input" name="category" [(ngModel)]="category" value="{{this.service.grypiTovariList.category}}" formControlName="category" placeholder="Category"/>
             </div>
             <div class="form-group">
               <div style="padding-top: 10px;width: 200px">priceIn</div>
-              <input type="number" class="input" name="priceIn" value="{{this.service.grypiTovariList.priceIn}}" formControlName="priceIn" placeholder="priceIn"/>
+              <input type="number" class="input" name="priceIn" [(ngModel)]="priceIn" value="{{this.service.grypiTovariList.priceIn}}" formControlName="priceIn" placeholder="priceIn"/>
             </div>
             <div class="form-group">
               <div style="padding-top: 10px;width: 200px">priceOut</div>
-              <input type="number" class="input" name="priceOut" value="{{this.service.grypiTovariList.priceOut}}" formControlName="priceOut" placeholder="priceOut"/>
+              <input type="number" class="input" name="priceOut" [(ngModel)]="priceOut" value="{{this.service.grypiTovariList.priceOut}}" formControlName="priceOut" placeholder="priceOut"/>
             </div>
             <div class="form-group" style="float: right">
               <button type="button" (click)="clickMe()"  class="btn btn-primary">

@@ -19,6 +19,9 @@ import {GrypiComponent} from './grypi/grypi.component';
 import {GrypiTovariComponent} from './grypi-tovari/grypi-tovari.component';
 import {AddItemsComponent} from './add-items/add-items.component';
 import {ChangeItemsComponent} from './change-items/change-items.component';
+import {PostavchikiComponent} from "./postavchiki/postavchiki.component";
+import {AddSupplierComponent} from "./add-supplier/add-supplier.component";
+import {ChangeSupplierComponent} from "./change-supplier/change-supplier.component";
 
 
 const routes: Routes = [
@@ -39,9 +42,15 @@ const routes: Routes = [
   { path: 'kasi', component: KasiComponent },
   { path: 'listKasi', component: ListKasiComponent },
   { path: 'grupi', component: GrypiComponent },
+
   { path: 'grupiTovari', component: GrypiTovariComponent },
   { path: 'addItems', component: AddItemsComponent },
   { path: 'changeItems', component: ChangeItemsComponent },
+
+
+  { path: 'postavchik', component: PostavchikiComponent },
+  { path: 'addPost', component: AddSupplierComponent },
+  { path: 'changePost', component: ChangeSupplierComponent },
 ];
 
 @NgModule({
