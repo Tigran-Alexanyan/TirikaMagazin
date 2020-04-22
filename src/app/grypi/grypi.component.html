@@ -41,8 +41,6 @@
             </mat-expansion-panel>
           </mat-accordion>
         </div>
-
-
         <div style="margin-top: 20px;margin-left: 2%">
           <form [formGroup]="registerForm">
             <div class="form-group">
@@ -50,8 +48,8 @@
             </div>
             <br>
             <div class="form-group">
-               <select class="input"  (change)="selectId($event.target.value)" (click)="selectId($event.target.value)">
-                 <option class="input" value="0" selected>Select Category</option>
+               <select class="input" (click)="selectId($event.target.value)">
+                 <option class="input" value="0">Select Category</option>
                   <option  *ngFor="let g of nameList" [value]="g.parentId">
                         {{g.name}}
                   </option>
